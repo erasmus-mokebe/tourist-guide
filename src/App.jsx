@@ -1,33 +1,29 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Map from "./Components/Map";
 import NavBar from "./Components/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Browser from "./pages/Browser";
+import Paths from "./pages/Paths";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // useEffect(() => {
+  //   const fetchData = async () => await fetch("https://api.openbrewerydb.org/breweries")
 
-  const increment = () => {
-    setCount((prevState) => prevState + 1);
-  };
-
-  const decrement = () => {
-    setCount(prevState => prevState - 1);
-  };
-
-  useEffect(() => {
-    const fetchData = async () => await fetch("https://api.openbrewerydb.org/breweries")
-  
-    fetchData().then(response => response.json().then(data => console.log(data)));
-  }, [])
+  //   fetchData().then(response => response.json().then(data => console.log(data)));
+  // }, [])
 
   return (
-    <div className="flex flex-col justify-stretch">
-      <header className="flex items-center gap-2 h-16 px-6">
-        <h1 className="tracking-tight uppercase font-extrabold">Monkemap</h1>
+    <div className="relative flex flex-col justify-stretch h-screen">
+      <header className="absolute top-8 left-0 right-0 sm:static flex items-center gap-2 h-16 px-6">
         <NavBar />
       </header>
-      <main className="flex-1">
-        <Map />
+      <main className="flex-1 flex">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Browser/>} />
+            <Route path="paths" element={<Paths/>} />
+          </Routes>
+        </BrowserRouter>
       </main>
     </div>
   );

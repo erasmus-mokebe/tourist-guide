@@ -1,6 +1,6 @@
 const Button = (props) => {
   return (
-    <button className="w-32 py-1 bg-teal-400 rounded text-white" onClick={props.onClick}>
+    <button className="flex justify-stretch items-center gap-4 px-5 py-3 h-full bg-[#24A229] rounded-lg text-white" onClick={props.onClick}>
       { props.children }
     </button>
   );

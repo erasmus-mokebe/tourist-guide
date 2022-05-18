@@ -1,19 +1,25 @@
 import SearchBar from "../SearchBar";
 import Icons from "../Icons";
 import Button from "../Button";
+import VerticalSeparator from "../VerticalSeparator";
 
-const NavBar = () => {
-  return (
-    <nav className="flex flex-1 justify-between h-full px-2 py-3">
-      <SearchBar />
+const NavBar = () => (
+  <nav className="flex-1 h-full px-2 py-3">
+    <div className="flex items-center gap-6 relative w-full h-full">
+      <div className="w-full sm:w-64">
+        <SearchBar />
+      </div>
       <Icons />
-      <span>More filters</span>
-      <Button>
-        <span>Explore Thessaloniki</span>
-        <svg></svg>
-      </Button>
-    </nav>
-  );
-};
+      <VerticalSeparator />
+      <span className="text-gray-500 font-semibold text-sm cursor-pointer">More filters</span>
+      <div className="absolute right-0 top-0 bottom-0">
+        <Button>
+          <span className="flex-1 text-sm whitespace-nowrap">Explore Thessaloniki</span>
+          <img className="w-full h-full" src="src/img/right-arrow.svg" alt="explore thessaloniki" />
+        </Button>
+      </div>
+    </div>
+  </nav>
+);
 
 export default NavBar;
