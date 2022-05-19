@@ -1,16 +1,18 @@
 import SideBar from '../../Components/SideBar';
 import Map from '../../Components/Map';
 import { useState, useEffect } from 'react';
+import {useDispatch} from "react-redux";
+import {setLocations} from "../../store/slices/locationsSlice";
 
 const Browser = () => {
   const [currentPoint, setCurrentPoint] = useState('');
-
+  const dispatch = useDispatch()
   const endpoint = 'locations';
   const port = 8080;
 
   const host = `${window.location.protocol}//${window.location.hostname}`;
 
-  useEffect(() => {
+  
 
     useEffect(() => {
       const fetchLocations = async () => {
@@ -23,10 +25,9 @@ const Browser = () => {
       }
   
       fetchLocations().then(locations => {
-        console.log(locations);
+        dispatch(setLocations(locations));
       })
     }, []);
-  }, []);
 
   return (
     <main className='flex-1 flex'>

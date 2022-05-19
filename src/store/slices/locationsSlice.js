@@ -7,8 +7,12 @@ const initialState = {
 export const locationsSlice = createSlice({
   name: 'locations',
   initialState,
-  reducers: {}
+  reducers: {
+    setLocations : (state, action) => {
+      state.locations = action.payload;
+    }
+  }
 });
 
-export const {} = locationsSlice.actions;
+export const {setLocations} = locationsSlice.actions;
 export default locationsSlice.reducer;
