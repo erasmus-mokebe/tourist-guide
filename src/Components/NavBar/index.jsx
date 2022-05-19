@@ -4,7 +4,7 @@ import Button from '../Button';
 import VerticalSeparator from '../VerticalSeparator';
 
 const NavBar = () => (
-  <nav className='flex-1 h-full px-2 py-3'>
+  <nav className='flex-1 h-full px-2 py-3 z-100'>
     <div className='flex items-center gap-6 relative w-full h-full'>
       <div className='w-full sm:w-64'>
         <SearchBar />
