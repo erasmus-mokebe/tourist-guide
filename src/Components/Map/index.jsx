@@ -21,10 +21,10 @@ const Map = props => {
   ];
 
   return (
-    <div className={'w-full -z-10'}>
+    <div className={'w-full h-full'}>
       <MapContainer
         maxBoundsViscosity={bounds}
-        style={{ height: '900px' }}
+        className="h-full"
         zoom={14}
         minZoom={13}
         maxBounds={bounds}
@@ -32,6 +32,7 @@ const Map = props => {
         bounds={bounds}
         center={[40.629323, 22.9455095]}
         scrollWheelZoom={true}
+        zoomControl={false}
       >
         <TileLayer
           // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

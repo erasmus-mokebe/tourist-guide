@@ -1,7 +1,6 @@
 import SidebarSingle from './../SidebarSingle';
 
-const SideBar = ({ location }) => {
-  console.log(location);
+const SideBar = () => {
 
   return (
     <section id='sidebar' className='hidden sm:flex w-1/3 h-full bg-white justify-center'>
