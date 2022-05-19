@@ -1,4 +1,4 @@
-import CardSingle from './../PathCard';
+import CardSingle from '../CardSingle';
 
 const Cards = () => {
   return (
