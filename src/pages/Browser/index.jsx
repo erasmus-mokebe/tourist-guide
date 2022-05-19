@@ -11,8 +11,21 @@ const Browser = () => {
   const host = `${window.location.protocol}//${window.location.hostname}`;
 
   useEffect(() => {
-    const fetchLocations = async () => (await fetch(`${host}:${port}/${endpoint}`)).body;
-    fetchLocations();
+
+    useEffect(() => {
+      const fetchLocations = async () => {
+        return fetch(`${host}:${port}/${endpoint}`)
+        .then((response) => {
+          return response.json();
+        }).then((locations) => {
+          return locations;  
+        })    
+      }
+  
+      fetchLocations().then(locations => {
+        console.log(locations);
+      })
+    }, []);
   }, []);
 
   return (
