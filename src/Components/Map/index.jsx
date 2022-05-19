@@ -24,7 +24,7 @@ const Map = props => {
     <div className={'w-full -z-10'}>
       <MapContainer
         maxBoundsViscosity={bounds}
-        style={{ height: '900px' }}
+        className="h-full"
         zoom={14}
         minZoom={13}
         maxBounds={bounds}

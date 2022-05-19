@@ -9,10 +9,10 @@ const NavBar = () => (
       <div className='w-full sm:w-64'>
         <SearchBar />
       </div>
-      <Icons />
-      <VerticalSeparator />
-      <span className='text-gray-500 font-semibold text-sm cursor-pointer'>More filters</span>
-      <div className='absolute right-0 top-0 bottom-0'>
+      <Icons className="hidden sm:flex" />
+      <VerticalSeparator className="hidden sm:block" />
+      <span className='hidden sm:inline text-gray-500 font-semibold text-sm cursor-pointer'>More filters</span>
+      <div className='hidden sm:block absolute right-0 top-0 bottom-0'>
         <Button>
           <span className='flex-1 text-sm whitespace-nowrap'>Explore Thessaloniki</span>
           <img

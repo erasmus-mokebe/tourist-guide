@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Browser = () => {
   const [currentPoint, setCurrentPoint] = useState('');
+  // const [sidebarOpened/]
 
   const endpoint = 'locations';
   const port = 8080;
@@ -16,7 +17,7 @@ const Browser = () => {
   }, []);
 
   return (
-    <main className='flex-1 flex'>
+    <main className='relative flex-1 flex'>
       <SideBar location={currentPoint} />
       <Map onPointClick={() => setCurrentPoint(location)} />
     </main>

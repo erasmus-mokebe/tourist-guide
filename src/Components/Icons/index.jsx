@@ -1,7 +1,7 @@
 import Icon from '../Icon';
 
-const Icons = () => (
-  <div className='flex gap-3'>
+const Icons = (props) => (
+  <div className={`${props.className} flex gap-3`}>
     <Icon color='#ED8B16' img='src/assets/icons/umbrella.svg' alt='rest in piss' />
     <Icon color='#C2BB00' img='src/assets/icons/weed.svg' alt='SPA' />
     <Icon color='#E1523D' img='src/assets/icons/tree.svg' alt='greenery' />
