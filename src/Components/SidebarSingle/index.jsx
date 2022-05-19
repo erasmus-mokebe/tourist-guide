@@ -1,6 +1,6 @@
 const SidebarSingle = props => {
   return (
-    <div className='h-64 text-sm'>
+    <div className='text-sm mb-3'>
       <img src={props.img} className='w-full overflow-hidden pb-4' />
       <div className='flex justify-between items-center'>
         <h3 className='text-lg'>{props.name}</h3>

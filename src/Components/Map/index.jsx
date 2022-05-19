@@ -21,7 +21,7 @@ const Map = props => {
   ];
 
   return (
-    <div className={'w-full'}>
+    <div className={'w-full -z-10'}>
       <MapContainer
         maxBoundsViscosity={bounds}
         style={{ height: '900px' }}
