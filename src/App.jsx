@@ -6,12 +6,6 @@ import Browser from './pages/Browser';
 import Paths from './pages/Paths';
 
 function App() {
-  // useEffect(() => {
-  //   const fetchData = async () => await fetch("https://api.openbrewerydb.org/breweries")
-
-  //   fetchData().then(response => response.json().then(data => console.log(data)));
-  // }, [])
-
   return (
     <div className='relative flex flex-col justify-stretch h-screen'>
       <header className='absolute top-8 left-0 right-0 box-border sm:static flex items-center gap-2 h-16 px-6'>

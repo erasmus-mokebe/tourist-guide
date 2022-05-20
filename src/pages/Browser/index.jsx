@@ -12,8 +12,6 @@ const Browser = () => {
 
   const host = `${window.location.protocol}//${window.location.hostname}`;
 
-  
-
     useEffect(() => {
       const fetchLocations = async () => {
         return fetch(`${host}:${port}/${endpoint}`)
@@ -32,7 +30,7 @@ const Browser = () => {
   return (
     <main className='flex-1 flex'>
       <SideBar location={currentPoint} />
-      <Map onPointClick={() => setCurrentPoint(location)} />
+      <Map onPointClick={(locationId) => setCurrentPoint(locationId)} />
     </main>
   );
 };
