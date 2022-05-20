@@ -7,8 +7,6 @@ const SideBar = ({locationId}) => {
 
   const currentLocation = locations.find(location => location.id === locationId)
 
-  console.log(currentLocation);
-
   return (
     <section id='sidebar' className='hidden sm:flex w-1/3 h-full bg-white justify-center'>
       
