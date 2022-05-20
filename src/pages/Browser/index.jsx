@@ -29,8 +29,8 @@ const Browser = () => {
 
   return (
     <main className='flex-1 flex'>
-      <SideBar location={currentPoint} />
-      <Map onPointClick={(locationId) => setCurrentPoint(locationId)} />
+      <SideBar locationId={currentPoint} />
+      <Map onPointClick={(locationId) => {setCurrentPoint(locationId); console.log(locationId)}} />
     </main>
   );
 };
