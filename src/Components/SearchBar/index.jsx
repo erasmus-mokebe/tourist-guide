@@ -1,14 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { openSideBar, closeSideBar } from "../../store/slices/sideBarSlice";
+import Logo from "../Logo";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
 
   return (
     <div className="px-4 py-1 bg-gray-100 rounded-lg">
-      <div className="w-full h-full py-1 relative">
+      <div className="flex items-center gap-5 w-full h-full py-1 relative">
+        <Logo className="inline-block sm:hidden w-4 h-4" />
         <input
-          className="w-full border-0 bg-transparent sm:placeholder:text-sm placeholder:font-semibold placeholder:text-gray-500"
+          className="flex-1 border-0 bg-transparent sm:placeholder:text-sm placeholder:font-semibold placeholder:text-gray-500"
           type="text"
           placeholder="Search"
           onFocus={() => {
