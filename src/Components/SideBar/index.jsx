@@ -1,4 +1,6 @@
 import SidebarSingle from './../SidebarSingle';
+import SideComment from '../SideComment';
+import CommentsList from '../CommentsList';
 
 const SideBar = () => {
 
@@ -19,7 +21,9 @@ const SideBar = () => {
           type='restaurant'
           address='Aristoteleus Square'
         />
+        
       </div>
+     
     </section>
   );
 };
