@@ -1,4 +1,4 @@
-import { Marker, Popup } from 'react-leaflet'
+import { Marker } from 'react-leaflet'
 import { useSelector } from 'react-redux';
 
 const PointList = ({onPointClick}) => {
@@ -23,7 +23,6 @@ const PointList = ({onPointClick}) => {
                 pointClickHandler(e, id)
             },
           }}>
-            {/* <Popup key={id + 1}>{point?.name}</Popup> */}
         </Marker>
     })
 

@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setLocations } from "../../store/slices/locationsSlice";
 
-const Browser = ({ content }) => {
-    const [currentPoint, setCurrentPoint] = useState("");
+const Browser = () => {
+    const [currentPointId, setCurrentPointId] = useState("");
     const dispatch = useDispatch();
     const endpoint = "locations";
     const port = 8080;
@@ -30,8 +30,8 @@ const Browser = ({ content }) => {
 
     return (
         <main className="flex-1 flex">
-            <SideBar content={content} />
-            <Map onPointClick={(locationId) => setCurrentPoint(locationId)} />
+            <SideBar locationId={currentPointId} />
+            <Map onPointClick={(locationId) =>  setCurrentPointId(locationId)} />
         </main>
     );
 };
