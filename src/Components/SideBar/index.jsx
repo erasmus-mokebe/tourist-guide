@@ -1,4 +1,6 @@
 import SidebarSingle from './../SidebarSingle';
+import SideComment from '../SideComment';
+import CommentsList from '../CommentsList';
 
 const SideBar = ({ location }) => {
   console.log(location);
@@ -20,7 +22,9 @@ const SideBar = ({ location }) => {
           type='restaurant'
           address='Aristoteleus Square'
         />
+        
       </div>
+     
     </section>
   );
 };
