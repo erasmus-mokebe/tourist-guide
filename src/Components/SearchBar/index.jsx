@@ -1,9 +1,16 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useRef } from "react";
 import { openSideBar, closeSideBar } from "../../store/slices/sideBarSlice";
 import Logo from "../Logo";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
+  const sideBarOpened = useSelector((state) => state.sideBar.opened);
+  const input = useRef();
+
+  const clearInput = () => {
+    input.current.value = "";
+  };
 
   return (
     <div className="px-4 py-1 bg-gray-100 rounded-lg">
@@ -13,16 +20,27 @@ const SearchBar = () => {
           className="flex-1 border-0 bg-transparent sm:placeholder:text-sm placeholder:font-semibold placeholder:text-gray-500"
           type="text"
           placeholder="Search"
+          ref={input}
           onFocus={() => {
             dispatch(openSideBar());
           }}
-          onBlur={() => {
-            dispatch(closeSideBar());
-          }}
+          // onBlur={() => {
+          //   dispatch(closeSideBar());
+          // }}
         />
         <div className="flex justify-center items-center absolute right-0 top-0 bottom-0">
-          <SearchIcon className="hidden sm:inline" />
-          <BurgerMenu className="inline sm:hidden" />
+          <div className="flex gap-2 items-center">
+            <SearchIcon className="hidden sm:inline" />
+            {sideBarOpened ? (
+              <img
+                className="cursor-pointer"
+                src="src/assets/icons/x.svg"
+                onClick={clearInput}
+              />
+            ) : (
+              <BurgerMenu className="inline sm:hidden" />
+            )}
+          </div>
         </div>
       </div>
     </div>

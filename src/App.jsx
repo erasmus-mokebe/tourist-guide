@@ -9,16 +9,10 @@ import Paths from "./pages/Paths";
 function App() {
   const sideBarOpened = useSelector((state) => state.sideBar.opened);
 
-  // useEffect(() => {
-  //   const fetchData = async () => await fetch("https://api.openbrewerydb.org/breweries")
-
-  //   fetchData().then(response => response.json().then(data => console.log(data)));
-  // }, [])
-
   return (
     <div className="relative flex flex-col justify-stretch h-screen">
       <header
-        className={`flex items-center gap-2 box-border max-w-full h-20 sm:h-16 px-6 z-50 ${
+        className={`flex items-center gap-2 box-border max-w-full h-26 sm:h-16 px-6 z-50 ${
           sideBarOpened ? "bg-white" : ""
         }`}
       >
