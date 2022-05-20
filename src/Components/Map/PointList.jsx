@@ -23,7 +23,7 @@ const PointList = ({onPointClick}) => {
                 pointClickHandler(e, id)
             },
           }}>
-            <Popup key={id + 1}>{point?.name}</Popup>
+            {/* <Popup key={id + 1}>{point?.name}</Popup> */}
         </Marker>
     })
 
