@@ -1,16 +1,21 @@
+import { useSelector } from "react-redux";
 import SearchBar from "../SearchBar";
 import Icons from "../Icons";
 import Button from "../Button";
 import VerticalSeparator from "../VerticalSeparator";
 
 const NavBar = () => {
+  const sideBarOpened = useSelector((state) => state.sideBar.opened);
+
   return (
     <nav className="relative flex-1 h-full box-border max-w-full border-box px-2 py-3">
       <div className="flex flex-col sm:flex-row items-center gap-6 relative w-full h-full">
         <div className="w-full sm:w-64">
           <SearchBar />
         </div>
-        <Icons />
+        <Icons
+          className={`${sideBarOpened ? "hidden" : ""} sm:flex items-center`}
+        />
         <VerticalSeparator className="hidden sm:block" />
         <span className="hidden sm:inline text-gray-500 font-semibold text-sm cursor-pointer">
           More filters
