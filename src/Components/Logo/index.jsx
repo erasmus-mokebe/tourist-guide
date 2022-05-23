@@ -10,7 +10,7 @@ const Logo = (props) => {
   };
 
   return (
-    <div className={`${props.className} flex justify-center items-center`}>
+    <div className={`${props.className} flex justify-center items-center pl-2`}>
       {sideBarOpened ? (
         <img
           className="cursor-pointer"

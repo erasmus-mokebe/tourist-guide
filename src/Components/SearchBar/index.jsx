@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
-import { openSideBar, closeSideBar } from "../../store/slices/sideBarSlice";
+import { openSideBar } from "../../store/slices/sideBarSlice";
 import Logo from "../Logo";
 import { updatePoint } from "../../store/slices/currentPointSlice";
 
@@ -14,11 +14,11 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="px-4 py-1 bg-gray-100 rounded-lg">
-      <div className="flex items-center gap-5 w-full h-full py-1 relative">
-        <Logo className="inline-block w-4 h-4" />
+    <div className="bg-gray-100 rounded-lg">
+      <div className="flex items-center gap-5 w-full h-full relative">
+          <Logo className="inline-block w-6 h-6" />
         <input
-          className="flex-1 border-0 bg-transparent sm:placeholder:text-sm placeholder:font-semibold placeholder:text-gray-500"
+          className="py-2 outline-none flex-1 border-0 bg-transparent sm:placeholder:text-sm placeholder:font-semibold placeholder:text-gray-500"
           type="text"
           placeholder="Search"
           ref={input}
@@ -34,14 +34,14 @@ const SearchBar = () => {
           <div className="flex gap-2 items-center">
             {sideBarOpened ? (
               <img
-                className="cursor-pointer"
+                className="cursor-pointer pr-2 pl-2"
                 src="src/assets/icons/x.svg"
                 onClick={clearInput}
               />
             ) : (
               <>
-                <SearchIcon className="hidden sm:inline" />
-                <BurgerMenu className="inline sm:hidden" />
+                <SearchIcon className="hidden sm:inline pl-2" />
+                <BurgerMenu className="inline sm:hidden pl-2" />
               </>
             )}
           </div>
@@ -56,7 +56,7 @@ const SearchIcon = (props) => {
     <img
       src="src/assets/icons/search.svg"
       alt="search"
-      className={`${props.className} w-9/12 h-9/12`}
+      className={`${props.className} w-9/12 h-9/12 pl-2`}
     />
   );
 };
@@ -71,7 +71,7 @@ const BurgerMenu = (props) => {
       onClick={toggle}
       src="src/assets/icons/burger.svg"
       alt="search"
-      className={`${props.className} w-9/12 h-9/12`}
+      className={`${props.className} w-9/12 h-9/12 pl-2`}
     />
   );
 };
