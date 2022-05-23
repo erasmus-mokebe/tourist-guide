@@ -1,4 +1,4 @@
-import CardSingle from '../../asdasd/CardSingle';
+import CardSingle from '../../components/CardSingle';
 
 const Paths = () => (
   <main className='grid grid-cols-3 gap-12 mx-12 mt-10'>

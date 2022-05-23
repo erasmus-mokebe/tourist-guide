@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './App.css';
-import NavBar from './asdasd/NavBar';
+import NavBar from './components/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Browser from './pages/Browser';
 import Paths from './pages/Paths';
-import LocationsList from './asdasd/LocationsList';
-import LocationDetails from './asdasd/LocationDetails';
-import SideBar from './asdasd/SideBar';
+import LocationsList from './components/LocationsList';
+import LocationDetails from './components/LocationDetails';
+import SideBar from './components/SideBar';
 
 function App() {
   const sideBarOpened = useSelector(state => state.sideBar.opened);

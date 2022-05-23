@@ -1,5 +1,5 @@
-import Map from '../../asdasd/Map';
-import CurrentLocationButton from '../../asdasd/CurrentLocationButton';
+import Map from '../../components/Map';
+import CurrentLocationButton from '../../components/CurrentLocationButton';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setLocations } from '../../store/slices/locationsSlice';
