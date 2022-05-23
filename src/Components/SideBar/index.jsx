@@ -1,4 +1,5 @@
-import LocationsList from "../LocationsList";
+import { useSelector } from "react-redux";
+import SidebarSingle from "./../SidebarSingle";
 
 const SideBar = (props) => {
     return (
