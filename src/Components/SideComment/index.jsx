@@ -1,4 +1,5 @@
 import { formatDistance } from "date-fns";
+import starFull from "../../assets/icons/star_full.svg";
 
 const SideComment = ({ img, name, date, opinion }) => (
   <section className="my-7">
@@ -16,12 +17,12 @@ const SideComment = ({ img, name, date, opinion }) => (
           </span>
         </div>
         <div className="flex m-0.5">
-          <img src="src/assets/icons/star_full.svg" />
-          <img src="src/assets/icons/star_full.svg" />
-          <img src="src/assets/icons/star_full.svg" />
-          <img src="src/assets/icons/star_full.svg" />
-          <img src="src/assets/icons/star_full.svg" />
-          <img src="src/assets/icons/star_full.svg" />
+          <img src={starFull} />
+          <img src={starFull} />
+          <img src={starFull} />
+          <img src={starFull} />
+          <img src={starFull} />
+          <img src={starFull} />
         </div>
       </div>
     </div>
