@@ -14,7 +14,7 @@ const SideBar = ({ locationId }) => {
   const sideBar = (
     <section
       id="sidebar"
-      className="hidden sm:flex w-1/3 h-full bg-white justify-center"
+      className="flex w-full sm:w-1/3 h-full bg-white justify-center z-40"
     >
       <div className="w-4/5">
         <SidebarSingle
