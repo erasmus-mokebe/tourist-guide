@@ -1,10 +1,10 @@
-const numberOfRatings = 3;
+const numberOfRatings = 1;
 const img = "src/assets/img/places/hotel.jpg";
 const webPage = "bluecottage.gr";
 const phone = "+42 83 72 482";
 const address = "Upper St. 17, Makedonia, Greece";
 
-const LocationDetails = (props) => (
+const LocationDetails = () => (
     <div>
         <img src={img} alt={"alt"} className="w-full mb-6" />
         <div className="px-5">
@@ -16,7 +16,7 @@ const LocationDetails = (props) => (
                         alt="rating star"
                     />
                     <span className="pl-3 pr-1">{/*rating*/ 4.8}</span>
-                    <span className="text-neutral-600">
+                    <span className="text-neutral-600 w-20">
                         ({numberOfRatings}
                         {numberOfRatings == 1 ? " rating)" : " ratings)"}
                     </span>

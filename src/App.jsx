@@ -6,6 +6,7 @@ import Browser from "./pages/Browser";
 import Paths from "./pages/Paths";
 import LocationsList from "./Components/LocationsList";
 import LocationDetails from "./Components/LocationDetails";
+import SideBar from "./Components/SideBar";
 
 function App() {
     return (
@@ -18,11 +19,23 @@ function App() {
                     <Routes>
                         <Route
                             path="/"
-                            element={<Browser content={<LocationsList />} />}
+                            element={
+                                <Browser>
+                                    <SideBar>
+                                        <LocationsList />
+                                    </SideBar>
+                                </Browser>
+                            }
                         />
                         <Route
                             path=":locationId"
-                            element={<Browser content={<LocationDetails />} />}
+                            element={
+                                <Browser>
+                                    <SideBar>
+                                        <LocationDetails />
+                                    </SideBar>
+                                </Browser>
+                            }
                         />
                         <Route path="paths" element={<Paths />} />
                     </Routes>

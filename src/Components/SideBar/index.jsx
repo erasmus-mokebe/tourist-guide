@@ -1,12 +1,12 @@
 import LocationsList from "../LocationsList";
 
-const SideBar = ({ content }) => {
+const SideBar = (props) => {
     return (
         <section
             id="sidebar"
-            className="hidden sm:flex w-1/3 h-full bg-white justify-center overflow-y-scroll scrollbar"
+            className="hidden sm:flex w-[500px] h-full bg-white justify-center overflow-y-scroll scrollbar"
         >
-            {content}
+            {props.children}
         </section>
     );
 };
