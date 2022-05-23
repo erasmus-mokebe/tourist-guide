@@ -1,5 +1,6 @@
 import SideBar from "../../Components/SideBar";
 import Map from "../../Components/Map";
+import CurrentLocationButton from "../../Components/CurrentLocationButton";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setLocations } from "../../store/slices/locationsSlice";
@@ -32,6 +33,7 @@ const Browser = () => {
     <main className="flex-1 flex">
       <SideBar locationId={currentPointId} />
       <Map onPointClick={(locationId) => setCurrentPointId(locationId)} />
+      <CurrentLocationButton />
     </main>
   );
 };
