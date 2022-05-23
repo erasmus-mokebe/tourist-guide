@@ -1,26 +1,37 @@
 import SideBar from "../../Components/SideBar";
 import Map from "../../Components/Map";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setLocations } from "../../store/slices/locationsSlice";
 
 const Browser = () => {
-  const [currentPoint, setCurrentPoint] = useState("");
-  // const [sidebarOpened/]
-
+  const [currentPointId, setCurrentPointId] = useState("");
+  const dispatch = useDispatch();
   const endpoint = "locations";
   const port = 8080;
 
   const host = `${window.location.protocol}//${window.location.hostname}`;
 
   useEffect(() => {
-    const fetchLocations = async () =>
-      (await fetch(`${host}:${port}/${endpoint}`)).body;
-    fetchLocations();
+    const fetchLocations = async () => {
+      return fetch(`${host}:${port}/${endpoint}`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((locations) => {
+          return locations;
+        });
+    };
+
+    fetchLocations().then((locations) => {
+      dispatch(setLocations(locations));
+    });
   }, []);
 
   return (
     <main className="flex-1 flex">
-      <SideBar location={currentPoint} />
-      <Map onPointClick={() => setCurrentPoint(location)} />
+      <SideBar locationId={currentPointId} />
+      <Map onPointClick={(locationId) => setCurrentPointId(locationId)} />
     </main>
   );
 };

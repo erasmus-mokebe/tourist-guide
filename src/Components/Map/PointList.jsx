@@ -1,26 +1,30 @@
-import { Marker, Popup } from 'react-leaflet'
+import { Marker } from 'react-leaflet'
+import { useSelector } from 'react-redux';
 
-const PointList = ({points, onPointClick}) => {
+const PointList = ({onPointClick}) => {
+
+    const locations = useSelector(state => state.locations).locations
     
-    if(!points) {
+    if(locations.length === 0) {
         return <span></span>;
     }
     
-    const pointClickHandler = (event) => {
-        onPointClick(event.latlng);
+    const pointClickHandler = (event, id) => {
+        onPointClick(id);
     }
 
-    const Points = points.map((point, index) =>(
-        <Marker key={index} position={point?.position} 
+    const Points = locations.map((point) => {
+        const cords = point?.place.coords;
+        const id = point?.id;
+
+        return <Marker key={id} position={cords} 
             eventHandlers={{
                 click: (e) => {
-                pointClickHandler(e)
+                pointClickHandler(e, id)
             },
           }}>
-            <Popup key={index + 1}>{point?.name}</Popup>
         </Marker>
-    ))
-
+    })
 
     return <>{Points}</>;
 }

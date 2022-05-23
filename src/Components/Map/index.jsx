@@ -1,27 +1,18 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { useState } from 'react';
-import PointList from './PointList';
-const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } = import.meta.env;
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import PointList from "./PointList";
+const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } =
+  import.meta.env;
 
-const Map = props => {
-  const [points, setPoints] = useState([
-    {
-      position: [40.629323, 22.9455095],
-      name: 'AAAAAAAAAAAAAAAAAAAAAAAAAA'
-    },
-    {
-      position: [40.639323, 22.9855095],
-      name: 'Bruh1'
-    }
-  ]);
-
+const Map = (props) => {
   const bounds = [
     [40.6555371, 22.9052355],
-    [40.5862896, 22.9904356]
+    [40.5862896, 22.9904356],
   ];
 
   return (
-    <div className={'absolute left-0 right-0 top-0 bottom-0 sm:static w-full z-10'}>
+    <div
+      className={"absolute left-0 right-0 top-0 bottom-0 sm:static w-full z-10"}
+    >
       <MapContainer
         maxBoundsViscosity={bounds}
         className="h-full"
@@ -40,7 +31,7 @@ const Map = props => {
           url={`https://api.mapbox.com/styles/v1/${VITE_MAPBOX_USERNAME}/${VITE_MAPBOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${VITE_MAPBOX_ACCESS_TOKEN}`}
         />
 
-        <PointList onPointClick={props.onPointClick} points={points} />
+        <PointList onPointClick={props.onPointClick} />
       </MapContainer>
     </div>
   );
