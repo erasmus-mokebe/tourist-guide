@@ -1,4 +1,3 @@
-import SideBar from "../../Components/SideBar";
 import Map from "../../Components/Map";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -30,10 +29,10 @@ const Browser = (props) => {
   }, []);
 
   return (
-    <main className="flex-1 flex">
+    <div className="flex-1 flex">
       {props.children}
       <Map onPointClick={(locationId) => setCurrentPoint(locationId)} />
-    </main>
+    </div>
   );
 };
 
