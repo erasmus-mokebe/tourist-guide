@@ -3,7 +3,7 @@ import Map from "../../Components/Map";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setLocations } from "../../store/slices/locationsSlice";
-
+import { openSideBar } from "../../store/slices/sideBarSlice";
 const Browser = () => {
   const [currentPointId, setCurrentPointId] = useState("");
   const dispatch = useDispatch();
@@ -30,8 +30,8 @@ const Browser = () => {
 
   return (
     <main className="flex-1 flex">
-      <SideBar locationId={currentPointId} />
-      <Map onPointClick={(locationId) => setCurrentPointId(locationId)} />
+      <SideBar />
+      <Map />
     </main>
   );
 };

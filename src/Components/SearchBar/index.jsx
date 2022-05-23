@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
 import { openSideBar, closeSideBar } from "../../store/slices/sideBarSlice";
 import Logo from "../Logo";
+import { updatePoint } from "../../store/slices/currentPointSlice";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const SearchBar = () => {
           placeholder="Search"
           ref={input}
           onFocus={() => {
+            dispatch(updatePoint(null));
             dispatch(openSideBar());
           }}
           // onBlur={() => {

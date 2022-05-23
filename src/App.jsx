@@ -5,29 +5,6 @@ import NavBar from "./Components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Browser from "./pages/Browser";
 import Paths from "./pages/Paths";
-
-// function App() {
-//   const sideBarOpened = useSelector((state) => state.sideBar.opened);
-
-//   return (
-//     <div className="relative flex flex-col justify-stretch h-screen">
-//       <header
-//         className={`flex items-center gap-2 box-border max-w-full h-26 sm:h-16 px-6 z-50 ${
-//           sideBarOpened ? "bg-white" : ""
-//         }`}
-//       >
-//         <NavBar />
-//       </header>
-//       <main className="flex-1 flex">
-//         <BrowserRouter>
-//           <Routes>
-//             <Route path="/" element={<Browser />} />
-//             <Route path="paths" element={<Paths />} />
-//           </Routes>
-//         </BrowserRouter>
-//       </main>
-//     </div>
-//   );
 import LocationsList from "./Components/LocationsList";
 import LocationDetails from "./Components/LocationDetails";
 
