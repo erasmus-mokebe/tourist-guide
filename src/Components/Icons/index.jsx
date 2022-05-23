@@ -1,8 +1,12 @@
 import Icon from "../Icon";
 
 const Icons = (props) => (
-  <div className={`${props.className} w-full min-h-[3rem] flex items-center`}>
-    <div className="overflow-x-scroll sm:overflow-x-auto h-full w-full flex gap-3">
+  <div
+    className={`${
+      props.className ? props.className : ""
+    } w-full h-full min-h-[3rem] flex items-center`}
+  >
+    <div className="overflow-x-scroll sm:overflow-x-auto h-full w-full flex items-center gap-3">
       <Icon
         color="#ED8B16"
         img="src/assets/icons/umbrella.svg"
