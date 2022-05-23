@@ -15,7 +15,7 @@ const SearchBar = () => {
   return (
     <div className="px-4 py-1 bg-gray-100 rounded-lg">
       <div className="flex items-center gap-5 w-full h-full py-1 relative">
-        <Logo className="inline-block sm:hidden w-4 h-4" />
+        <Logo className="inline-block w-4 h-4" />
         <input
           className="flex-1 border-0 bg-transparent sm:placeholder:text-sm placeholder:font-semibold placeholder:text-gray-500"
           type="text"
@@ -30,7 +30,6 @@ const SearchBar = () => {
         />
         <div className="flex justify-center items-center absolute right-0 top-0 bottom-0">
           <div className="flex gap-2 items-center">
-            <SearchIcon className="hidden sm:inline" />
             {sideBarOpened ? (
               <img
                 className="cursor-pointer"
@@ -38,7 +37,10 @@ const SearchBar = () => {
                 onClick={clearInput}
               />
             ) : (
-              <BurgerMenu className="inline sm:hidden" />
+              <>
+                <SearchIcon className="hidden sm:inline" />
+                <BurgerMenu className="inline sm:hidden" />
+              </>
             )}
           </div>
         </div>
