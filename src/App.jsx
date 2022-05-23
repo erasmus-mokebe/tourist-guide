@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './App.css';
-import NavBar from './components/NavBar';
+import { Navigation } from './features/navigation/Navigation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Browser from './pages/Browser';
 import Paths from './pages/Paths';
-import LocationsList from './components/LocationsList';
-import LocationDetails from './components/LocationDetails';
-import SideBar from './components/SideBar';
+import { LocationList } from './features/location-list/LocationList';
+import { LocationDetails } from './features/location-details/LocationDetails';
+import { SideBar } from './features/sidebar/Sidebar';
 
 function App() {
   const sideBarOpened = useSelector(state => state.sideBar.opened);
@@ -20,7 +20,7 @@ function App() {
         }`}
       >
       </header> */}
-      <NavBar />
+      <Navigation />
       <main className='flex-1 flex h-full overflow-y-hidden'>
         <BrowserRouter>
           <Routes>
@@ -29,7 +29,7 @@ function App() {
               element={
                 <Browser>
                   <SideBar>
-                    <LocationsList />
+                    <LocationList />
                   </SideBar>
                 </Browser>
               }

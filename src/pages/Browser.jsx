@@ -1,8 +1,7 @@
-import Map from '../../components/Map';
-import CurrentLocationButton from '../../components/CurrentLocationButton';
+import { Map } from '../features/map/Map';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setLocations } from '../../store/slices/locationsSlice';
+import { setLocations } from '../store/slices/locationsSlice';
 
 const Browser = props => {
   const [currentPointId, setCurrentPointId] = useState('');
@@ -32,7 +31,6 @@ const Browser = props => {
     <div className='flex-1 flex'>
       {props.children}
       <Map onPointClick={locationId => setCurrentPointId(locationId)} />
-      <CurrentLocationButton />
     </div>
   );
 };

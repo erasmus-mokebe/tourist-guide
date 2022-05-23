@@ -1,20 +1,17 @@
-// import { useSelector } from 'react-redux';
-import Button from '../Button';
-import Icons from '../Icons';
-import SearchBar from '../SearchBar';
-import VerticalSeparator from '../VerticalSeparator';
+import { Button } from '../../common/Button';
+import { SearchBar } from './SearchBar';
+import { VerticalSeparator } from '../../common/VerticalSeparator';
 import tripleDots from '../../assets/icons/triple-dots.svg';
+import { LocationTypes } from './LocationTypes';
 
-const NavBar = () => {
-  // const sideBarOpened = useSelector(state => state.sideBar.opened);
-
+export const Navigation = () => {
   return (
     <nav className='flex flex-col lg:flex-row box-border gap-5 z-50 lg:px-4 lg:py-3 w-full lg:h-16'>
       <div className='flex px-8 pt-6 lg:p-0 justify-center lg:justify-start'>
         <SearchBar />
       </div>
       <div className='flex flex-1 items-center lg:gap-3'>
-        <Icons />
+        <LocationTypes />
         <VerticalSeparator />
         <img src={tripleDots} alt='see more' className='hidden lg:inline w-8 h-8' />
       </div>
@@ -27,5 +24,3 @@ const NavBar = () => {
     </nav>
   );
 };
-
-export default NavBar;

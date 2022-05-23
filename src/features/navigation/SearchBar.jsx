@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { openSideBar } from '../../store/slices/sideBarSlice';
-import Logo from '../Logo';
+import { Logo } from './Logo';
 
-const SearchBar = () => {
+export const SearchBar = () => {
   const dispatch = useDispatch();
   const sideBarOpened = useSelector(state => state.sideBar.opened);
   const input = useRef();
@@ -64,5 +64,3 @@ const BurgerMenu = props => {
     />
   );
 };
-
-export default SearchBar;

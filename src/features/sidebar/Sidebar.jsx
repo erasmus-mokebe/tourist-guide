@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-const SideBar = ({ locationId, children }) => {
+export const SideBar = ({ children }) => {
   const isOpen = useSelector(state => state.sideBar.opened);
 
   const sideBar = (
@@ -14,4 +14,3 @@ const SideBar = ({ locationId, children }) => {
 
   return <>{isOpen && sideBar}</>;
 };
-export default SideBar;
