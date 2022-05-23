@@ -1,14 +1,17 @@
-import { useSelector } from "react-redux";
-import SidebarSingle from "./../SidebarSingle";
+import { useSelector } from 'react-redux';
 
-const SideBar = (props) => {
-    return (
-        <section
-            id="sidebar"
-            className="hidden sm:flex w-[500px] h-full bg-white justify-center overflow-y-scroll scrollbar"
-        >
-            {props.children}
-        </section>
-    );
+const SideBar = ({ locationId, children }) => {
+  const isOpen = useSelector(state => state.sideBar.opened);
+
+  const sideBar = (
+    <section
+      id='sidebar'
+      className='flex min-w-[400px] w-[400px] h-full bg-white justify-center z-40'
+    >
+      {children}
+    </section>
+  );
+
+  return <>{isOpen && sideBar}</>;
 };
 export default SideBar;

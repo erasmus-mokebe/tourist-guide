@@ -1,37 +1,38 @@
-import Map from "../../Components/Map";
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setLocations } from "../../store/slices/locationsSlice";
+import Map from '../../components/Map';
+import CurrentLocationButton from '../../components/CurrentLocationButton';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setLocations } from '../../store/slices/locationsSlice';
 
-const Browser = (props) => {
-  const [currentPoint, setCurrentPoint] = useState("");
+const Browser = props => {
+  const [currentPointId, setCurrentPointId] = useState('');
   const dispatch = useDispatch();
-  const endpoint = "locations";
+  const endpoint = 'locations';
   const port = 8080;
 
-  const host = `${window.location.protocol}//${window.location.hostname}`;
+  const host = `http://localhost:8080`;
 
-  useEffect(() => {
-    console.log(`${host}:${port}/${endpoint}`);
-    const fetchLocations = async () => {
-      return fetch(`${host}:${port}/${endpoint}`)
-        .then((response) => {
-          return response.json();
-        })
-        .then((locations) => {
-          return locations;
-        });
-    };
+  // useEffect(() => {
+  //   const fetchLocations = async () => {
+  //     return fetch(`${host}/${endpoint}`)
+  //       .then(response => {
+  //         return response.json();
+  //       })
+  //       .then(locations => {
+  //         return locations;
+  //       });
+  //   };
 
-    fetchLocations().then((locations) => {
-      dispatch(setLocations(locations));
-    });
-  }, []);
+  //   fetchLocations().then(locations => {
+  //     dispatch(setLocations(locations));
+  //   });
+  // }, []);
 
   return (
-    <div className="flex-1 flex">
+    <div className='flex-1 flex'>
       {props.children}
-      <Map onPointClick={(locationId) => setCurrentPoint(locationId)} />
+      <Map onPointClick={locationId => setCurrentPointId(locationId)} />
+      <CurrentLocationButton />
     </div>
   );
 };

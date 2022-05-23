@@ -1,7 +1,5 @@
-const VerticalSeparator = () => {
-	return (
-		<div className="w-px h-3/5 bg-gray-400"></div>
-	);
-};
+const VerticalSeparator = () => (
+  <span className='hidden lg:inline-block w-px h-3/5 bg-gray-400'></span>
+);
 
 export default VerticalSeparator;
