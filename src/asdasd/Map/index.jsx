@@ -22,11 +22,11 @@ const Map = props => {
         scrollWheelZoom={true}
         zoomControl={false}
       >
-        {/* <TileLayer
+        <TileLayer
           // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
           url={`https://api.mapbox.com/styles/v1/${VITE_MAPBOX_USERNAME}/${VITE_MAPBOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${VITE_MAPBOX_ACCESS_TOKEN}`}
-        /> */}
+        />
 
         <PointList onPointClick={props.onPointClick} />
       </MapContainer>
