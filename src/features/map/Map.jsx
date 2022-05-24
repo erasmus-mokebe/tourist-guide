@@ -1,8 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { PointList } from './PointList';
+import { useNavigate } from 'react-router-dom';
+
 const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } = import.meta.env;
 
-export const Map = props => {
+export const Map = () => {
+  const navigate = useNavigate();
+
   const bounds = [
     [40.6555371, 22.9052355],
     [40.5862896, 22.9904356]
@@ -16,8 +20,8 @@ export const Map = props => {
         zoom={14}
         minZoom={13}
         maxBounds={bounds}
-        bounceAtZoomLimits={true}
         bounds={bounds}
+        bounceAtZoomLimits={true}
         center={[40.629323, 22.9455095]}
         scrollWheelZoom={true}
         zoomControl={false}
@@ -28,7 +32,7 @@ export const Map = props => {
           url={`https://api.mapbox.com/styles/v1/${VITE_MAPBOX_USERNAME}/${VITE_MAPBOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${VITE_MAPBOX_ACCESS_TOKEN}`}
         />
 
-        <PointList onPointClick={props.onPointClick} />
+        <PointList onMarkerClick={id => navigate(`/${id}`)} />
       </MapContainer>
     </div>
   );
