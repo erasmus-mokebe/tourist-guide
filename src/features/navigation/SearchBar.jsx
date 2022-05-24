@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { openSideBar } from '../../store/slices/sideBarSlice';
 import { Logo } from './Logo';
 
-export const SearchBar = () => {
+import SearchIcon from '../../assets/icons/search.svg';
+import BurgerIcon from '../../assets/icons/burger.svg';
+import XIcon from '../../assets/icons/x.svg';
+
+export const SearchBar = props => {
   const dispatch = useDispatch();
   const sideBarOpened = useSelector(state => state.sideBar.opened);
   const input = useRef();
@@ -27,40 +31,15 @@ export const SearchBar = () => {
       <div className='flex justify-center items-center absolute right-4 top-0 bottom-0'>
         <div className='flex items-center'>
           {sideBarOpened ? (
-            <img className='cursor-pointer' src='src/assets/icons/x.svg' onClick={clearInput} />
+            <img className='cursor-pointer' src={XIcon} onClick={clearInput} />
           ) : (
             <>
-              <SearchIcon className='hidden lg:inline' />
-              <BurgerMenu className='inline lg:hidden' />
+              <img src={SearchIcon} alt='search' className='w-9/12 h-9/12 hidden lg:inline' />
+              <img src={BurgerIcon} alt='search' className='w-9/12 h-9/12 inline lg:hidden' />
             </>
           )}
         </div>
       </div>
     </div>
-  );
-};
-
-const SearchIcon = props => {
-  return (
-    <img
-      src='src/assets/icons/search.svg'
-      alt='search'
-      className={`${props.className} w-9/12 h-9/12`}
-    />
-  );
-};
-
-const BurgerMenu = props => {
-  const toggle = () => {
-    // toggle the mobile menu
-  };
-
-  return (
-    <img
-      onClick={toggle}
-      src='src/assets/icons/burger.svg'
-      alt='search'
-      className={`${props.className} w-9/12 h-9/12`}
-    />
   );
 };

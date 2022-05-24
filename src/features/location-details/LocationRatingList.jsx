@@ -1,6 +1,6 @@
 import { LocationRating } from './LocationRating';
 import { useState } from 'react';
-import faceImg from '../../assets/img/face.jpg';
+import FaceIcon from '../../assets/img/face.jpg';
 
 const comments = [
   {
@@ -17,7 +17,7 @@ export const LocationRatingList = () => {
 
   const renderComments = comments =>
     comments.map(({ id, name, date, opinion }) => (
-      <LocationRating key={id} img={faceImg} name={name} date={date} opinion={opinion} />
+      <LocationRating key={id} img={FaceIcon} name={name} date={date} opinion={opinion} />
     ));
 
   return (

@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { closeSideBar } from '../../store/slices/sideBarSlice';
 
+import LogoIcon from '../../assets/icons/logo.svg';
+
 export const Logo = props => {
   const sideBarOpened = useSelector(state => state.sideBar.opened);
   const dispatch = useDispatch();
@@ -19,7 +21,7 @@ export const Logo = props => {
           onClick={close}
         />
       ) : (
-        <img src='src/assets/icons/logo.svg' alt='logo' />
+        <img src={LogoIcon} alt='logo' />
       )}
     </div>
   );

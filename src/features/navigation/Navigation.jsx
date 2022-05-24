@@ -4,6 +4,8 @@ import { VerticalSeparator } from '../../common/VerticalSeparator';
 import tripleDots from '../../assets/icons/triple-dots.svg';
 import { LocationTypes } from './LocationTypes';
 
+import RightArrowIcon from '../../assets/icons/right-arrow.svg';
+
 export const Navigation = () => {
   return (
     <nav className='flex flex-col lg:flex-row box-border gap-5 z-50 lg:px-4 lg:py-3 w-full lg:h-16'>
@@ -18,7 +20,7 @@ export const Navigation = () => {
       <div className='hidden justify-end lg:flex lg:flex-1'>
         <Button>
           <span className='flex-1 text-lg whitespace-nowrap'>Explore Thessaloniki</span>
-          <img className='h-4' src='src/assets/icons/right-arrow.svg' alt='explore thessaloniki' />
+          <img className='h-4' src={RightArrowIcon} alt='explore thessaloniki' />
         </Button>
       </div>
     </nav>
