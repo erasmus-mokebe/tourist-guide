@@ -1,8 +1,8 @@
-import umbrella from '../../assets/icons/umbrella.svg';
-import weed from '../../assets/icons/weed.svg';
-import tree from '../../assets/icons/tree.svg';
-import cutlery from '../../assets/icons/cutlery.svg';
-import parking from '../../assets/icons/parking.svg';
+import UmbrellaIcon from '../../assets/icons/umbrella.svg';
+import WeedIcon from '../../assets/icons/weed.svg';
+import TreeIcon from '../../assets/icons/tree.svg';
+import CutleryIcon from '../../assets/icons/cutlery.svg';
+import ParkingIcon from '../../assets/icons/parking.svg';
 
 const LocationType = props => (
   <div
@@ -20,10 +20,10 @@ export const LocationTypes = props => (
       props.className ? props.className : ''
     } px-8 lg:p-0 h-full min-h-[3rem] flex gap-3 items-center overflow-x-scroll lg:overflow-x-auto`}
   >
-    <LocationType color='#ED8B16' img={umbrella} alt='rest in piss' />
-    <LocationType color='#C2BB00' img={weed} alt='SPA' />
-    <LocationType color='#E1523D' img={tree} alt='greenery' />
-    <LocationType color='#005E54' img={cutlery} alt='Restaurants' />
-    <LocationType color='#003547' img={parking} alt='Parking' />
+    <LocationType color='#ED8B16' img={UmbrellaIcon} alt='rest in piss' />
+    <LocationType color='#C2BB00' img={WeedIcon} alt='SPA' />
+    <LocationType color='#E1523D' img={TreeIcon} alt='greenery' />
+    <LocationType color='#005E54' img={CutleryIcon} alt='Restaurants' />
+    <LocationType color='#003547' img={ParkingIcon} alt='Parking' />
   </div>
 );

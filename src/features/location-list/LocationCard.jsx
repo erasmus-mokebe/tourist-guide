@@ -1,11 +1,14 @@
+import RatingStarFullIcon from '../../assets/icons/star_full.svg';
+import ProfileImage from '../../assets/img/places/david.jpg';
+
 export const LocationCard = ({ location }) => {
   return (
     <div className='text-sm mb-8'>
-      <img src='src/assets/img/places/david.jpg' className='w-full overflow-hidden pb-4' />
+      <img src={ProfileImage} className='w-full overflow-hidden pb-4' />
       <div className='flex justify-between items-center'>
         <h3 className='text-lg'>{location?.name}</h3>
         <div className='flex'>
-          <img src='src/assets/icons/star_full.svg' />
+          <img src={RatingStarFullIcon} />
           <span>{location?.rating.score}</span>
         </div>
       </div>

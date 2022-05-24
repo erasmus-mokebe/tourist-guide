@@ -1,5 +1,5 @@
 import { formatDistance } from 'date-fns';
-import starFull from '../../assets/icons/star_full.svg';
+import RatingStarFullIcon from '../../assets/icons/star_full.svg';
 
 export const LocationRating = ({ img, name, date, opinion }) => (
   <section className='my-7'>
@@ -17,12 +17,12 @@ export const LocationRating = ({ img, name, date, opinion }) => (
           </span>
         </div>
         <div className='flex m-0.5'>
-          <img src={starFull} />
-          <img src={starFull} />
-          <img src={starFull} />
-          <img src={starFull} />
-          <img src={starFull} />
-          <img src={starFull} />
+          <img src={RatingStarFullIcon} />
+          <img src={RatingStarFullIcon} />
+          <img src={RatingStarFullIcon} />
+          <img src={RatingStarFullIcon} />
+          <img src={RatingStarFullIcon} />
+          <img src={RatingStarFullIcon} />
         </div>
       </div>
     </div>
