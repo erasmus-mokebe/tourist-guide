@@ -30,10 +30,8 @@ const Browser = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(locationId);
-
     if (locationId) dispatch(openSideBar());
-  }, []);
+  }, [locationId]);
 
   return (
     <div className="flex-1 flex">
