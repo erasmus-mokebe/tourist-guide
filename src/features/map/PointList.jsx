@@ -1,27 +1,20 @@
 import { Marker } from 'react-leaflet';
 import { useSelector } from 'react-redux';
 
-export const PointList = ({ onPointClick }) => {
-  const locations = useSelector(state => state.locations).locations;
+export const PointList = ({ onMarkerClick }) => {
+  const locations = useSelector(state => state.locations.locations);
+  const locationsFilters = useSelector(state => state.locations.filters);
 
-  const pointClickHandler = (event, id) => {
-    onPointClick(id);
-  };
+  if (!locations) return <></>;
 
-  return locations.map(point => {
-    const cords = point?.place.coords;
-    const id = point?.id;
-
-    return (
-      <Marker
-        key={id}
-        position={cords}
-        eventHandlers={{
-          click: e => {
-            pointClickHandler(e, id);
-          }
-        }}
-      ></Marker>
-    );
-  });
+  return locations.map(
+    ({ id, place, type }) =>
+      (locationsFilters.type === 'all' || locationsFilters.type === type) && (
+        <Marker
+          key={id}
+          position={place.coords}
+          eventHandlers={{ click: () => onMarkerClick(id) }}
+        />
+      )
+  );
 };

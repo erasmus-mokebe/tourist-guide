@@ -6,7 +6,7 @@ export const LocationList = () => {
 
   return (
     <div className='w-full p-5' style={{ direction: 'ltr' }}>
-      {locations.map(location => (
+      {locations?.map(location => (
         <LocationCard key={location.id} location={location}></LocationCard>
       ))}
     </div>

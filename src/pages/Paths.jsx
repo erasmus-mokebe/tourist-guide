@@ -2,7 +2,7 @@ import { PathCard } from '../features/paths/PathCard';
 
 import PathImage from '../assets/img/paths/beach.jpg';
 
-const Paths = () => (
+export const Paths = () => (
   <main className='grid grid-cols-3 gap-12 mx-12 mt-10'>
     {new Array(10).fill(null).map((_, id) => (
       <PathCard
@@ -15,5 +15,3 @@ const Paths = () => (
     ))}
   </main>
 );
-
-export default Paths;
