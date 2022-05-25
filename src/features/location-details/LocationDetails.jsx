@@ -1,3 +1,7 @@
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 import { LocationRatingList } from "./LocationRatingList";
 import { LocationRatingForm } from "./LocationRatingForm";
 
@@ -7,53 +11,58 @@ import PhoneIcon from "../../assets/icons/phone.svg";
 import HomeIcon from "../../assets/icons/home.svg";
 import PlaceIcon from "../../assets/img/places/hotel.jpg";
 
-const numberOfRatings = 3;
 const webPage = "bluecottage.gr";
 const phone = "+42 83 72 482";
 const address = "Upper St. 17, Makedonia, Greece";
 
-export const LocationDetails = () => (
-  <div>
-    <img src={PlaceIcon} alt={"alt"} className="w-full mb-6" />
-    <div className="px-6">
-      <div className="flex justify-between">
-        <h3 className="tesxt-lg font-semibold">{"Blue cottage"}</h3>
-        <div className="flex font-semibold">
-          <img src={RatingStarFullIcon} alt="rating star" />
-          <span className="pl-3 pr-1">{/*rating*/ 4.8}</span>
-          <span className="text-neutral-600 w-20">
-            ({numberOfRatings}
-            {numberOfRatings == 1 ? " rating)" : " ratings)"}
-          </span>
-        </div>
-      </div>
-      <p className="text-neutral-600 my-8">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id sapien
-        ligula. Nam vestibulum orci id nisl pharetra tincidunt. Aenean massa
-        velit, aliquet nec interdum sed.
-      </p>
+export const LocationDetails = () => {
+  const { locationId } = useParams();
+  const locations = useSelector((state) => state.locations.locations);
+  const location = locations.find((el) => el.id == locationId);
+
+  useEffect(() => console.log(location), [locations]);
+
+  return (
+    location && (
       <div>
-        <div className="flex">
-          <img src={EarthIcon} alt="earth icon" className="mr-5" />
-          <a
-            href={"https://" + webPage}
-            className="text-color-black hover:decoration-solid"
-          >
-            {webPage}
-          </a>
-        </div>
-        <div className="flex my-1">
-          <img src={PhoneIcon} alt="phone icon" className="mr-5" />
-          <span>{phone}</span>
-        </div>
-        <div className="flex">
-          <img src={HomeIcon} alt="house icon" className="mr-5" />
-          <span>{address}</span>
+        <img src={PlaceIcon} alt={"alt"} className="w-full mb-6" />
+        <div className="px-6">
+          <div className="flex justify-between">
+            <h3 className="tesxt-lg font-semibold">{location.name}</h3>
+            <div className="flex font-semibold">
+              <img src={RatingStarFullIcon} alt="rating star" />
+              <span className="pl-3 pr-1">{location.rating.score}</span>
+              <span className="text-neutral-600 w-20">
+                ({location.rating.ratings.length}
+                {location.rating.ratings.length == 1 ? " rating)" : " ratings)"}
+              </span>
+            </div>
+          </div>
+          <p className="text-neutral-600 my-8">{location.description}</p>
+          <div>
+            <div className="flex">
+              <img src={EarthIcon} alt="earth icon" className="mr-5" />
+              <a
+                href={"https://" + webPage}
+                className="text-color-black hover:decoration-solid"
+              >
+                {webPage}
+              </a>
+            </div>
+            <div className="flex my-1">
+              <img src={PhoneIcon} alt="phone icon" className="mr-5" />
+              <span>{phone}</span>
+            </div>
+            <div className="flex">
+              <img src={HomeIcon} alt="house icon" className="mr-5" />
+              <span>{location.place.street}</span>
+            </div>
+          </div>
+          <h3 className="tesxt-lg font-semibold my-5">Ratings</h3>
+          <LocationRatingList ratings={location.rating.ratings} />
+          <LocationRatingForm />
         </div>
       </div>
-      <h3 className="tesxt-lg font-semibold my-5">Ratings</h3>
-      <LocationRatingList />
-      <LocationRatingForm />
-    </div>
-  </div>
-);
+    )
+  );
+};

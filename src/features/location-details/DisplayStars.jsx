@@ -1,7 +1,7 @@
 import FullStar from "../../assets/icons/star_full.svg";
 import EmptyStar from "../../assets/icons/star_empty.svg";
 
-export const StarsInput = ({ rating, onChange }) => {
+export const DisplayStars = ({ rating }) => {
   const renderStars = (rating) => {
     const stars = [];
 
@@ -11,8 +11,6 @@ export const StarsInput = ({ rating, onChange }) => {
           key={i}
           src={i <= rating ? FullStar : EmptyStar}
           alt={i <= rating ? "Full Star" : "Empty Star"}
-          onClick={() => onChange(i)}
-          className="cursor-pointer"
         ></img>
       );
     }
