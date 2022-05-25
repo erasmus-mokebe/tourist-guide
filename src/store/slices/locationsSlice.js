@@ -4,6 +4,7 @@ const initialState = {
   locations: [],
   filters: {
     type: "all",
+    search: "",
   },
 };
 
@@ -20,9 +21,12 @@ export const locationsSlice = createSlice({
     clearTypeFilter: (state) => {
       state.filters.type = "all";
     },
+    search: (state, action) => {
+      state.filters.search = action.payload;
+    },
   },
 });
 
-export const { setLocations, filterType, clearTypeFilter } =
+export const { setLocations, filterType, clearTypeFilter, search } =
   locationsSlice.actions;
 export default locationsSlice.reducer;
