@@ -19,11 +19,13 @@ export const BottomDrawer = ({ children }) => {
 
   return (
     <section
-      className="absolute top-0 left-0 w-full h-full z-[9999] overflow-y-scroll"
+      className="absolute top-0 left-0 w-full h-full z-[9999] overflow-y-scroll snap-y"
       style={{ pointerEvents: active ? "auto" : "none" }}
     >
+      <div className="h-[35%] snap-start" />
+      <div className="h-[calc(65%-1.75rem)] snap-start" />
       <div
-        className="min-h-screen mt-[calc(100vh-1.75rem)] bg-white pointer-events-auto rounded-t-xl"
+        className="min-h-screen bg-white pointer-events-auto rounded-t-xl"
         ref={drawer}
       >
         <div className="p-3">
