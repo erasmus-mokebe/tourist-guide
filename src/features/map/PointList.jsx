@@ -10,7 +10,6 @@ import ParkingIcon from "../../assets/icons/parking.svg";
 import MapMarker from "../../assets/icons/map-marker.svg";
 
 const GetIconImage = (type) => {
-	console.log(type);
 	switch (type) {
 		case "parking":
 			return ParkingIcon;
@@ -84,8 +83,6 @@ const GetIcon = (type) => {
 };
 
 const renderMarker = (markerComponent) => {
-	console.log(markerComponent);
-
 	return divIcon({
 		html: renderToString(markerComponent),
 		iconSize: [25, 40],
