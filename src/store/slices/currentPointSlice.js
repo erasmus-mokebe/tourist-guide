@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentPoint: null
+  currentPoint: null,
 };
 
 export const currentPointSlice = createSlice({
-  name: 'currentPoint',
+  name: "currentPoint",
   initialState,
   reducers: {
-    updatePoint: (state, action) => {
+    updatePoint: (state,action) => {
       state.currentPoint = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const { updatePoint } = currentPointSlice.actions;

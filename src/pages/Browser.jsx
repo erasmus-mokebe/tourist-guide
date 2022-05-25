@@ -1,11 +1,11 @@
-import { Map } from "../features/map/Map";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setLocations } from "../store/slices/locationsSlice";
-import { openSideBar } from "../store/slices/sideBarSlice";
-import { useParams } from "react-router-dom";
+import { Map } from '../features/map/Map';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setLocations } from '../store/slices/locationsSlice';
+import { openSideBar } from '../store/slices/sideBarSlice';
+import { useParams } from 'react-router-dom';
 
-const Browser = (props) => {
+export const Browser = props => {
   const dispatch = useDispatch();
   const { locationId } = useParams();
   const host = `http://localhost:8080`;
@@ -13,18 +13,18 @@ const Browser = (props) => {
   useEffect(() => {
     const fetchLocations = async () => {
       return fetch(`${host}/locations`)
-        .then((response) => {
+        .then(response => {
           return response.json();
         })
-        .then((locations) => {
+        .then(locations => {
           return locations;
         })
-        .catch((e) => {
-          console.error("failed to connect to server :(");
+        .catch(e => {
+          console.error('failed to connect to server :(');
         });
     };
 
-    fetchLocations().then((locations) => {
+    fetchLocations().then(locations => {
       dispatch(setLocations(locations));
     });
   }, []);
@@ -34,11 +34,9 @@ const Browser = (props) => {
   }, [locationId]);
 
   return (
-    <div className="flex-1 flex">
+    <div className='flex-1 flex'>
       {props.children}
       <Map />
     </div>
   );
 };
-
-export default Browser;
