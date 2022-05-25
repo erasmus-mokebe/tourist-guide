@@ -1,4 +1,4 @@
-import { Map } from "../features/map/Map";
+import Map from "../features/map/Map";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setLocations } from "../store/slices/locationsSlice";
