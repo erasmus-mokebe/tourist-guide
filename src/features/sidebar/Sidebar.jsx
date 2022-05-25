@@ -6,7 +6,7 @@ export const SideBar = ({ children }) => {
   const sideBar = (
     <section
       id="sidebar"
-      className="flex min-w-[400px] w-[400px] h-full bg-white justify-center z-40 flex-col relative"
+      className="flex min-w-[400px] w-[400px] h-full bg-white z-40 flex-col relative"
     >
       {children}
     </section>

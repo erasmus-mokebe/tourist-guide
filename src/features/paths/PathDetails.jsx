@@ -9,7 +9,7 @@ const PathDetails = ({ location }) => {
     setIsClicked((pre) => !pre);
   };
   return (
-    <div>
+    <div className="p-[8%]">
       <img src={lagoon} />
       <div className="flex justify-between items-center my-2">
         <h3 className="font-semibold text-xl">{location?.name}</h3>
