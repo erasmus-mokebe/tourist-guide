@@ -21,8 +21,10 @@ export const LocationList = () => {
       return filters.name || location.fitness > 1;
     })
     .sort((a, b) => {
-      return a.fitness - b.fitness;
+      return b.fitness - a.fitness;
     });
+
+  console.log(locationsSorted);
 
   return (
     <div className="w-full p-5" style={{ direction: "ltr" }}>
