@@ -35,7 +35,6 @@ const LocationType = (props) => {
       <div
         className="inline-block min-h-full h-full aspect-square"
         style={{
-          background: "red",
           maskImage: `url("${props.img}")`,
           WebkitMaskImage: `url("${props.img}")`,
           maskSize: "contain",
