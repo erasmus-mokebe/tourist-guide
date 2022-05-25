@@ -1,9 +1,8 @@
-import { useSelector } from 'react-redux';
 import './App.css';
 import { Navigation } from './features/navigation/Navigation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Browser from './pages/Browser';
-import Paths from './pages/Paths';
+import { Browser } from './pages/Browser';
+import { Paths } from './pages/Paths';
 import { LocationList } from './features/location-list/LocationList';
 import { LocationDetails } from './features/location-details/LocationDetails';
 import { SideBar } from './features/sidebar/Sidebar';

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } = import.meta.env;
 
-const Map = () => {
+export const Map = () => {
   const navigate = useNavigate();
 
   const bounds = [
@@ -36,5 +36,3 @@ const Map = () => {
     </div>
   );
 };
-
-export default Map;
