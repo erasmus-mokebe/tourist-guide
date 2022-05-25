@@ -1,18 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  locations: []
+  locations: [],
 };
 
 export const locationsSlice = createSlice({
-  name: 'locations',
+  name: "locations",
   initialState,
   reducers: {
-    setLocations : (state, action) => {
+    setLocations: (state, action) => {
       state.locations = action.payload;
-    }
-  }
+    },
+    setVisited: (state, action) => {
+      const location = state.locations.find(
+        (location) => location.id == action.payload.id
+      );
+      if (!location) {
+        return;
+      }
+      location.visited = action.payload.visited;
+    },
+  },
 });
 
-export const {setLocations} = locationsSlice.actions;
+export const { setLocations, setVisited } = locationsSlice.actions;
 export default locationsSlice.reducer;

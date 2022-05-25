@@ -3,11 +3,11 @@ import fullStar from "../../assets/icons/star_full.svg";
 import pin from "../../assets/icons/pin.svg";
 import { useState } from "react";
 
-const PathDetails = ({ location }) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const toogle = () => {
-    setIsClicked((pre) => !pre);
-  };
+const PathDetails = ({ location, onToggle }) => {
+  //  const [isClicked, setIsClicked] = useState(false);
+  // const toogle = () => {
+  //   setIsClicked((pre) => !pre);
+  // };
   return (
     <div className="p-[8%]">
       <img src={lagoon} />
@@ -20,14 +20,14 @@ const PathDetails = ({ location }) => {
           </span>
         </div>
       </div>
-      <div className="text-gray-500 mb-4 font-medium">
+      <div className="text-gray-500 mb-4 font-medium text-sm">
         {location?.type}
-        <span className="mx-4">·{location?.place.street}</span>
+        <span className="mx-2">·{location?.place.street}</span>
       </div>
-      {isClicked ? (
+      {location.visited ? (
         <button
           className="bg-green-100 rounded-lg w-full text-green-600 font-medium p-2"
-          onClick={toogle}
+          onClick={onToggle}
         >
           Mark not visited
         </button>
@@ -35,13 +35,13 @@ const PathDetails = ({ location }) => {
         <div className="flex w-full justify-between ">
           <button
             className="bg-[#24A229]  text-white p-2 rounded-lg w-9/12"
-            onClick={toogle}
+            onClick={onToggle}
           >
             Mark visited
           </button>
           <button
             className={`bg-[#24A229] rounded-lg w-[22%] relative ${
-              !isClicked ? "animate-grow" : ""
+              !location.visited ? "animate-grow" : ""
             }`}
           >
             <img

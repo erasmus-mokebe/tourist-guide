@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PathDetails from "./PathDetails";
 import PathButton from "./PathButton";
 import PathDescription from "./PathDescription";
+import { setVisited } from "../../store/slices/locationsSlice";
 
 const description = [
   {
@@ -14,12 +15,22 @@ const description = [
 
 const PathList = () => {
   const locations = useSelector((state) => state.locations).locations;
-
+  const dispatch = useDispatch();
+  const toggleVisited = (id, visited) => {
+    dispatch(setVisited({ id, visited }));
+  };
   return (
     <>
       <PathButton />
-      <PathDescription descriptions={description[0]} />
-      <PathDetails location={locations[0]} />
+      <PathDescription descriptions={description[0]} locations={locations} />
+
+      {locations.map((location) => (
+        <PathDetails
+          key={location.id}
+          onToggle={() => toggleVisited(location.id, !location.visited)}
+          location={location}
+        />
+      ))}
     </>
   );
 };
