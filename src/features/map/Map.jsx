@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } = import.meta.env;
 
-export const Map = () => {
+const Map = () => {
   const navigate = useNavigate();
 
   const bounds = [
@@ -27,7 +27,6 @@ export const Map = () => {
         zoomControl={false}
       >
         <TileLayer
-          // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
           url={`https://api.mapbox.com/styles/v1/${VITE_MAPBOX_USERNAME}/${VITE_MAPBOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${VITE_MAPBOX_ACCESS_TOKEN}`}
         />
@@ -37,3 +36,5 @@ export const Map = () => {
     </div>
   );
 };
+
+export default Map;
