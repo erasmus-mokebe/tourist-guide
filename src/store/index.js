@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import currentPointSlice from './slices/currentPointSlice';
+import { currentPointSlice } from './slices/currentPointSlice';
 import locationsReducer from './slices/locationsSlice';
 import sideBarReducer from './slices/sideBarSlice';
 

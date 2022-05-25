@@ -11,7 +11,6 @@ export const currentPointSlice = createSlice({
     updatePoint: (state,action) => {
       state.currentPoint = action.payload;
     },
-
   },
 });
 
