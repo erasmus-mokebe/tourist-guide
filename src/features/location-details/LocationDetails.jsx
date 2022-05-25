@@ -15,7 +15,7 @@ const address = "Upper St. 17, Makedonia, Greece";
 export const LocationDetails = () => (
   <div>
     <img src={PlaceIcon} alt={"alt"} className="w-full mb-6" />
-    <div className="px-5">
+    <div className="px-6">
       <div className="flex justify-between">
         <h3 className="tesxt-lg font-semibold">{"Blue cottage"}</h3>
         <div className="flex font-semibold">
