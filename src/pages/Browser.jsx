@@ -10,6 +10,7 @@ export const Browser = (props) => {
   const { locationId } = useParams();
 
   useEffect(() => {
+    console.log(props.children);
     if (locationId) dispatch(openSideBar());
   }, [locationId]);
 
