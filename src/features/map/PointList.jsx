@@ -1,9 +1,11 @@
-import { Marker } from "react-leaflet";
+import { Marker, useMapEvents } from 'react-leaflet';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { divIcon } from "leaflet";
-import { useSelector } from "react-redux";
 import { renderToString } from "react-dom/server";
 import { getIconImage, getIconColor } from "./util";
 import MapMarker from "../../assets/icons/map-marker.svg";
+import { openSideBar } from "../../store/slices/sideBarSlice";
 
 const GetIcon = (type) => {
   const icon = getIconImage(type);
@@ -61,9 +63,34 @@ const renderMarker = (markerComponent) => {
   });
 };
 
-export const PointList = ({ onMarkerClick }) => {
+export const PointList = () => {
   const locations = useSelector(state => state.locations.locations);
   const locationsFilters = useSelector(state => state.locations.filters);
+
+  const navigate = useNavigate()
+
+  const dispatch = useDispatch();
+
+
+  const map = useMapEvents({});
+
+  const markerClickHandler = (id, point) => {
+    navigate(`/${id}`);
+
+    console.log(point);
+
+    const cords = {
+      lat: point.latlng.lat,
+      lng: point.latlng.lng  + 0.001
+    };
+
+    map.flyTo(cords, 18, {
+      animate: true,
+    });
+
+    dispatch(openSideBar());
+  }
+
 
   if (!locations) return <></>;
 
@@ -73,8 +100,8 @@ export const PointList = ({ onMarkerClick }) => {
         <Marker
           key={id}
           position={place.coords}
-          eventHandlers={{ click: () => onMarkerClick(id) }}
           icon={renderMarker(GetIcon(type))}
+          eventHandlers={{ click: markerClickHandler.bind(null, id) }}
         />
       )
   );
