@@ -11,7 +11,7 @@ export const LocationList = () => {
     .map((location) => ({
       ...location,
       fitness:
-        location.rating.score / 5 +
+        location.ratingScore / 5 +
         (location.name.match(regex) ? 5 : 0) +
         (location.place.street.match(regex) ? 3 : 0) +
         (location.description.match(regex) ? 2 : 0) +
@@ -23,8 +23,6 @@ export const LocationList = () => {
     .sort((a, b) => {
       return b.fitness - a.fitness;
     });
-
-  console.log(locationsSorted);
 
   return (
     <div className="w-full p-5" style={{ direction: "ltr" }}>
