@@ -4,6 +4,7 @@ import { StarsInput } from "./StarsInput";
 
 export const LocationRatingForm = () => {
   const [rating, setRating] = useState(0);
+
   return (
     <div>
       <h3 className="text-lg font-semibold my-5">Share your experiences</h3>
