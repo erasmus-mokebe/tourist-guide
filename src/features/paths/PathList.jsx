@@ -20,10 +20,9 @@ const PathList = () => {
     dispatch(setVisited({ id, visited }));
   };
   return (
-    <>
+    <div className="px-8">
       <PathButton />
       <PathDescription descriptions={description[0]} locations={locations} />
-
       {locations.map((location) => (
         <PathDetails
           key={location.id}
@@ -31,7 +30,7 @@ const PathList = () => {
           location={location}
         />
       ))}
-    </>
+    </div>
   );
 };
 

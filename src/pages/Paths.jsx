@@ -16,19 +16,10 @@ const Paths = () => {
     })();
   }, []);
 
-  console.log(paths)
-
   return (
     <main className="grid grid-cols-3 gap-12 mx-12 mt-10">
       {(paths || []).map((path) => (
-        <PathCard
-          key={path.id}
-          img={path.img}
-          name={path.name}
-          description={path.description}
-          // TODO: Add missing images
-          // TODO: Add progressbar
-        />
+        <PathCard path={path} key={path.id} />
       ))}
     </main>
   );

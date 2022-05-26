@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./App.css";
 import { Navigation } from "./features/navigation/Navigation";
@@ -15,12 +14,6 @@ function App() {
 
   return (
     <div className="relative flex flex-col justify-stretch h-screen">
-      {/* <header
-        className={`flex items-center gap-2 box-border max-w-full h-26 sm:h-16 z-50 ${
-          sideBarOpened ? 'bg-white' : ''
-        }`}
-      >
-      </header> */}
       <Navigation />
       <main className="flex-1 flex h-full overflow-y-hidden">
         <BrowserRouter>
@@ -47,7 +40,7 @@ function App() {
             />
             <Route path="paths" element={<Paths />} />
             <Route
-              path="path/:pathId"
+              path="paths/:pathId"
               element={
                 <Browser>
                   <SideBar>

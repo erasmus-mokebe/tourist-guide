@@ -1,15 +1,10 @@
 import lagoon from "../../assets/img/paths/lagoon.jpg";
 import fullStar from "../../assets/icons/star_full.svg";
 import pin from "../../assets/icons/pin.svg";
-import { useState } from "react";
 
 const PathDetails = ({ location, onToggle }) => {
-  //  const [isClicked, setIsClicked] = useState(false);
-  // const toogle = () => {
-  //   setIsClicked((pre) => !pre);
-  // };
   return (
-    <div className="p-[8%]">
+    <div className="py-[8%]">
       <img src={lagoon} />
       <div className="flex justify-between items-center my-2">
         <h3 className="font-semibold text-xl">{location?.name}</h3>
