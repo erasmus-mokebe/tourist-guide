@@ -9,7 +9,6 @@ import { DisplayStars } from "./DisplayStars";
 import EarthIcon from "../../assets/icons/earth.svg";
 import PhoneIcon from "../../assets/icons/phone.svg";
 import HomeIcon from "../../assets/icons/home.svg";
-import PlaceIcon from "../../assets/img/places/hotel.jpg";
 
 const webPage = "bluecottage.gr";
 const phone = "+42 83 72 482";
@@ -25,9 +24,15 @@ export const LocationDetails = () => {
   return (
     location && (
       <div>
-        <img src={PlaceIcon} alt={"alt"} className="w-full mb-6" />
+        <img
+          src={location.photoUrl}
+          alt={"alt"}
+          className="w-full h-96 object-cover mb-6"
+        />
         <div className="px-6">
           <div className="w-full">
+            <h3 className="tesxt-lg font-semibold">{location.name}</h3>
+            <span className="text-sm text-slate-400">{location.type}</span>
             <div className="flex font-semibold">
               <DisplayStars rating={Math.round(location.ratingScore)} />
               <span className="pl-3 pr-1">{location.ratingScore}</span>
@@ -36,7 +41,6 @@ export const LocationDetails = () => {
                 {location.ratings.length == 1 ? " rating)" : " ratings)"}
               </span>
             </div>
-            <h3 className="tesxt-lg font-semibold">{location.name}</h3>
           </div>
           <p className="text-neutral-600 my-8">{location.description}</p>
           <div>
