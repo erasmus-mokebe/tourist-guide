@@ -24,9 +24,32 @@ export const locationsSlice = createSlice({
     search: (state, action) => {
       state.filters.search = action.payload;
     },
+    addComment: (state, action) => {
+      const { id, rating } = action.payload;
+
+      console.log(rating);
+
+      state.locations = state.locations.map((location) => {
+        if (location.id === id) {
+          const ratings = [rating, ...location.ratings];
+
+          const ratingScore =
+            (location.ratingScore * location.ratings.length + rating.rating) /
+            ratings.length;
+
+          return {
+            ...location,
+            ratings,
+            ratingScore,
+          };
+        }
+
+        return location;
+      });
+    },
   },
 });
 
-export const { setLocations, filterType, clearTypeFilter, search } =
+export const { setLocations, filterType, clearTypeFilter, search, addComment } =
   locationsSlice.actions;
 export default locationsSlice.reducer;

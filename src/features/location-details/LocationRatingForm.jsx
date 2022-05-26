@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addComment } from "../../store/slices/locationsSlice";
 
 import { StarsInput } from "./StarsInput";
 
 export const LocationRatingForm = () => {
+  const dispatch = useDispatch();
   const [rating, setRating] = useState(0);
   const [content, setContent] = useState("");
   const { locationId } = useParams();
@@ -11,22 +14,27 @@ export const LocationRatingForm = () => {
   const sendRating = (e) => {
     e.preventDefault();
 
+    const payload = {
+      rating,
+      content,
+      author: {
+        nickname: "reltiH flodA",
+        picture:
+          "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d2/d2f9c2f26c27684a80db6e5505811df1cb2c8471_full.jpg",
+      },
+    };
+
     fetch(`http://localhost:8080/locations/${locationId}/ratings`, {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        rating,
-        content,
-        author: {
-          nickname: "reltiH flodA",
-          picture:
-            "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d2/d2f9c2f26c27684a80db6e5505811df1cb2c8471_full.jpg",
-        },
-      }),
-    });
+      body: JSON.stringify(payload),
+    })
+      .then((data) => data.json())
+      .then((body) => dispatch(addComment({ id: locationId, rating: body })))
+      .catch((err) => console.error(err));
+
     setContent("");
   };
 
