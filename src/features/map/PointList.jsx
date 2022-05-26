@@ -32,7 +32,7 @@ const GetIcon = (type) => {
         >
           <div className="flex justify-center items-center w-full aspect-square p-1">
             <div
-              className="w-full h-full"
+              className="w-full h-full mt-0.5"
               style={{
                 maskImage: `url("${icon}")`,
                 maskSize: "contain",
