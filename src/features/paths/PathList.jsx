@@ -37,8 +37,6 @@ const PathList = () => {
     .filter((location) => {
       return filters.name || location.fitness > 0;
     });
-  console.log(allLocations);
-  console.log(matchedLocations);
 
   const toggleVisited = (id, visited) => {
     dispatch(setVisited({ id, visited }));
