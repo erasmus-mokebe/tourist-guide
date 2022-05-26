@@ -26,7 +26,11 @@ export const LocationRatingForm = () => {
       body: JSON.stringify({
         rating,
         content,
-        author: { nickname: "Adolf Hitler", picture: "" },
+        author: {
+          nickname: "Adolf Hitler",
+          picture:
+            "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d2/d2f9c2f26c27684a80db6e5505811df1cb2c8471_full.jpg",
+        },
       }),
     });
     setContent("");

@@ -31,10 +31,10 @@ export const LocationDetails = () => {
             <h3 className="tesxt-lg font-semibold">{location.name}</h3>
             <div className="flex font-semibold">
               <img src={RatingStarFullIcon} alt="rating star" />
-              <span className="pl-3 pr-1">{location.rating.score}</span>
+              <span className="pl-3 pr-1">{location.ratingScore}</span>
               <span className="text-neutral-600 w-20">
-                ({location.rating.ratings.length}
-                {location.rating.ratings.length == 1 ? " rating)" : " ratings)"}
+                ({location.ratings.length}
+                {location.ratings.length == 1 ? " rating)" : " ratings)"}
               </span>
             </div>
           </div>
@@ -59,7 +59,7 @@ export const LocationDetails = () => {
             </div>
           </div>
           <h3 className="tesxt-lg font-semibold my-5">Ratings</h3>
-          <LocationRatingList ratings={location.rating.ratings} />
+          <LocationRatingList ratings={location.ratings} />
           <LocationRatingForm />
         </div>
       </div>
