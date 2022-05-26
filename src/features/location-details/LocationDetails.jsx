@@ -64,6 +64,7 @@ export const LocationDetails = () => {
           </div>
           <h3 className="tesxt-lg font-semibold my-5">Ratings</h3>
           <LocationRatingList ratings={location.ratings} />
+          <h3 className="text-lg font-semibold my-5">Share your experiences</h3>
           <LocationRatingForm />
         </div>
       </div>
