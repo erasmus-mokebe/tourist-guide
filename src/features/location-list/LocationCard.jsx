@@ -19,7 +19,7 @@ export const LocationCard = ({ location }) => {
         <h3 className="text-lg">{location.name}</h3>
         <div className="flex">
           <img src={RatingStarFullIcon} />
-          <span>{location.ratingScore}</span>
+          <span>{location.ratingScore.toFixed(2)}</span>
         </div>
       </div>
       <div className="text-gray-500">

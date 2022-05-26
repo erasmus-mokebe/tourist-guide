@@ -35,7 +35,9 @@ export const LocationDetails = () => {
             <span className="text-sm text-slate-400">{location.type}</span>
             <div className="flex font-semibold">
               <DisplayStars rating={Math.round(location.ratingScore)} />
-              <span className="pl-3 pr-1">{location.ratingScore}</span>
+              <span className="pl-3 pr-1">
+                {location.ratingScore.toFixed(2)}
+              </span>
               <span className="text-neutral-600 w-20">
                 ({location.ratings.length}
                 {location.ratings.length == 1 ? " rating)" : " ratings)"}
@@ -64,6 +66,7 @@ export const LocationDetails = () => {
           </div>
           <h3 className="tesxt-lg font-semibold my-5">Ratings</h3>
           <LocationRatingList ratings={location.ratings} />
+          <h3 className="text-lg font-semibold my-5">Share your experiences</h3>
           <LocationRatingForm />
         </div>
       </div>
