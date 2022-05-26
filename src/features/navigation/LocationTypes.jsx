@@ -68,11 +68,11 @@ export const LocationTypes = (props) => {
         props.className ? props.className : ""
       } px-8 lg:p-0 h-full min-h-[3rem] lg:flex gap-3 items-center overflow-x-scroll lg:overflow-x-auto`}
     >
-      <LocationType alt="rest in piss" type="beach" />
+      <LocationType alt="Hotels" type="hotel" />
       <LocationType alt="Museums" type="museum" />
-      <LocationType alt="greenery" type="park" />
+      <LocationType alt="Parks" type="park" />
       <LocationType alt="Restaurants" type="restaurant" />
-      <LocationType alt="Parking" type="parking" />
+      <LocationType alt="Shops" type="shop" />
     </div>
   );
 };

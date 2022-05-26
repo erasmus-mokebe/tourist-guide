@@ -1,6 +1,6 @@
-import { Marker, useMapEvents } from 'react-leaflet';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Marker, useMapEvents } from "react-leaflet";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { divIcon } from "leaflet";
 import { renderToString } from "react-dom/server";
 import { getIconImage, getIconColor } from "./util";
@@ -64,24 +64,21 @@ const renderMarker = (markerComponent) => {
 };
 
 export const PointList = () => {
-  const locations = useSelector(state => state.locations.locations);
-  const locationsFilters = useSelector(state => state.locations.filters);
+  const locations = useSelector((state) => state.locations.locations);
+  const locationsFilters = useSelector((state) => state.locations.filters);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
-
 
   const map = useMapEvents({});
 
   const markerClickHandler = (id, point) => {
     navigate(`/${id}`);
 
-    console.log(point);
-
     const cords = {
       lat: point.latlng.lat,
-      lng: point.latlng.lng  + 0.001
+      lng: point.latlng.lng + 0.001,
     };
 
     map.flyTo(cords, 18, {
@@ -89,20 +86,20 @@ export const PointList = () => {
     });
 
     dispatch(openSideBar());
-  }
-
+  };
 
   if (!locations) return <></>;
 
   return locations.map(
     ({ id, place, type }) =>
-      (locationsFilters.type === 'all' || locationsFilters.type === type) && (
+      console.log(type) ||
+      ((locationsFilters.type === "all" || locationsFilters.type === type) && (
         <Marker
           key={id}
           position={place.coords}
           icon={renderMarker(GetIcon(type))}
           eventHandlers={{ click: markerClickHandler.bind(null, id) }}
         />
-      )
+      ))
   );
 };
