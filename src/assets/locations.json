@@ -1,0 +1,193 @@
+[
+  {
+    "name": "Ουζερί Τσινάρι",
+    "place": {
+      "coords": [40.6457951, 22.9460967],
+      "street": "Alexandras Papadopoulou 72"
+    },
+    "type": "restaurant",
+    "photo-url": "https://media-cdn.tripadvisor.com/media/photo-s/02/e4/ef/4e/ouzeri-tsinari.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Sofi's House Restaurant",
+    "place": { "coords": [40.6389511, 22.9350469], "street": "Adigonidon 4" },
+    "type": "restaurant",
+    "photo-url": "https://cityportal.gr/wp-content/uploads/2021/12/1-58-826x1024.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Anza Lounge Bar & Restaurant",
+    "place": { "coords": [40.6383692, 22.9280693], "street": "Dodekanisou 6" },
+    "type": "restaurant",
+    "photo-url": "https://media-cdn.tripadvisor.com/media/photo-s/21/50/e7/30/anza-restaurant.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Konfor",
+    "place": { "coords": [40.6370771, 22.9291722], "street": "verιas 3-5" },
+    "type": "restaurant",
+    "photo-url": "https://media-cdn.tripadvisor.com/media/photo-s/21/50/e7/30/anza-restaurant.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Αγιολί",
+    "place": { "coords": [40.6314759, 22.9374542], "street": "Leof. Nikis 15" },
+    "type": "restaurant",
+    "photo-url": "https://www.athensmagazine.gr/photos/w_1200px/articles/201501a/3545c74ed20d989bf0b40df566777ad9.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Hotel Kastoria",
+    "place": { "coords": [40.638787, 22.938241], "street": "Leontos Sofou 17" },
+    "type": "hotel",
+    "photo-url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/11560760.jpg?k=f1e98e4d35e41b51ab2834012dfbe6621242e61613fd5a8d17b902d890beda82&o=&hp=1",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Hotel Mandrino",
+    "place": { "coords": [40.63885, 22.939021], "street": "2, Adigonidon str" },
+    "type": "hotel",
+    "photo-url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94125385.jpg?k=ba4a84659bc65bd6db0da674326e5a781f9e723fed973e1ce3bf9199bbbb6ea1&o=&hp=1",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Porto Sea View Apartments",
+    "place": { "coords": [40.634432, 22.936353], "street": "Kountouriotou 13" },
+    "type": "hotel",
+    "photo-url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/309617315.jpg?k=0f4b7dca8e8bf2f0788cdc5a4296d319347ac6b4c7272e1ba028ced7e9dd20ed&o=&hp=1",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Plaza Hotel",
+    "place": { "coords": [40.63521, 22.935987], "street": "Pageou 5" },
+    "type": "hotel",
+    "photo-url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/154884702.jpg?k=a2733e85527526188e0e95120c37e6bedb2f0d0062064bd0146f23c730d9b0b4&o=&hp=1",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Modiano Studios",
+    "place": { "coords": [40.635788, 22.941397], "street": "Ermou 25" },
+    "type": "hotel",
+    "photo-url": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/320651229.jpg?k=1281123d67061426b45752075eaa3bb546b6cb356c6fe79cc22f1d8259d744ef&o=&hp=1",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "One Salonica Outlet Mall",
+    "place": {
+      "coords": [40.64799828, 22.92309944],
+      "street": "Kotta Roulia 1"
+    },
+    "type": "shopping",
+    "photo-url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/90/ab/94/one-salonica-outlet-mall.jpg?w=1200&h=-1&s=1",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Εμπορικό Κέντρο Πλατεία",
+    "place": { "coords": [40.633398, 22.941653], "street": "Tsimiski 43" },
+    "type": "shopping",
+    "photo-url": "https://fastly.4sqi.net/img/general/600x600/36713793_XxFYK3xY9xNviV07ukiL7SmVjpeR1hYPMx8u3jAPDxQ.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Macedonia Shopping Mall",
+    "place": { "coords": [40.578052, 22.974179], "street": "Tompazi 15" },
+    "type": "shopping",
+    "photo-url": "https://lh5.googleusercontent.com/p/AF1QipNvjl6t-pcigIeB_yxvPqDFhqkEtrMw2QuGTQ3v=w189-h315-n-k-no-nu",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Kapani Market",
+    "place": { "coords": [40.635918, 22.942281], "street": "Vlali st." },
+    "type": "shopping",
+    "photo-url": "https://vagabundler.com/wp-content/uploads/2019/02/DSC09260-Copy-1024x768.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "White Tower of Thessaloniki",
+    "place": {
+      "coords": [40.626364, 22.948292],
+      "street": "Thessaloniki 546 21"
+    },
+    "type": "museums",
+    "photo-url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/WhiteTowerThessaloniki_%283%29.JPG",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Rotunda",
+    "place": {
+      "coords": [40.633295, 22.952799],
+      "street": "Platia Agiou Georgiou Rotonta 5"
+    },
+    "type": "museums",
+    "photo-url": "https://lh3.googleusercontent.com/p/AF1QipNNpVoWXfBN7tKjh0JIaSdlciYbGorjgrki_E7J=s1564-w824-h1564",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Church of Agios Dimitrios",
+    "place": { "coords": [40.638661, 22.947815], "street": "Agiou Dimitriou" },
+    "type": "museums",
+    "photo-url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/%CE%9D%CE%B1%CF%8C%CF%82_%CE%91%CE%B3%CE%AF%CE%BF%CF%85_%CE%94%CE%B7%CE%BC%CE%B7%CF%84%CF%81%CE%AF%CE%BF%CF%85%2C_%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7_3785.jpg/260px-%CE%9D%CE%B1%CF%8C%CF%82_%CE%91%CE%B3%CE%AF%CE%BF%CF%85_%CE%94%CE%B7%CE%BC%CE%B7%CF%84%CF%81%CE%AF%CE%BF%CF%85%2C_%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7_3785.jpg",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Archaeology Museum of Thessaloniki",
+    "place": {
+      "coords": [40.625394, 22.953825],
+      "street": "Manoli Andronikou 6"
+    },
+    "type": "museums",
+    "photo-url": "https://lh5.googleusercontent.com/p/AF1QipMT5dkTCmBT4jGawi8h7AmWn8bXE7pF8GTxPrvB=w296-h220-n-k-no",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Corfu Park",
+    "place": { "coords": [40.636552, 22.943353], "street": "Egnatia" },
+    "type": "parks",
+    "photo-url": "https://lh5.googleusercontent.com/p/AF1QipMr8Sc7q0fQhKYPTjFae_1_i9Jzch6kSV__w2aW=w296-h220-n-k-no",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Alexander the Great Garden",
+    "place": { "coords": [40.624406, 22.95042], "street": "Thessaloniki" },
+    "type": "parks",
+    "photo-url": "https://lh5.googleusercontent.com/p/AF1QipOBt30sylE1csE5gXZnIDTcjp-Y_yIoZZ5GjCVa=w189-h158-n-k-no-nu",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "YMCA Park",
+    "place": { "coords": [40.625218, 22.950943], "street": "Thessaloniki" },
+    "type": "parks",
+    "photo-url": "https://lh5.googleusercontent.com/p/AF1QipMj3D2lElRcg-6e3lFu5Vsx9RcCyf3wiTy8G3OM=w189-h135-n-k-no-nu",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  },
+  {
+    "name": "Park of Nations",
+    "place": { "coords": [40.643882, 22.935348], "street": "Lagkada 24" },
+    "type": "parks",
+    "photo-url": "https://lh3.googleusercontent.com/p/AF1QipNC7wBOJzfaBaoCEmYedCuska5mTxFSxpcDdsg6=s1564-w824-h1564",
+    "ratings": [],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl velit, posuere eget laoreet et, dictum non risus. Nullam ac purus vitae est laoreet tempus ut eu dui. Proin sed mi sollicitudin, vestibulum metus quis, sagittis lectus. Phasellus interdum diam sed felis imperdiet, at pulvinar enim malesuada. Nunc in sem."
+  }
+]
