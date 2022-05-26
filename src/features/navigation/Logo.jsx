@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { closeSideBar } from "../../store/slices/sideBarSlice";
 
 import LogoIcon from "../../assets/icons/logo.svg";
+import BackArrow from "../../assets/icons/back.svg";
 
 export const Logo = (props) => {
   const sideBarOpened = useSelector((state) => state.sideBar.opened);
@@ -25,7 +26,7 @@ export const Logo = (props) => {
       {sideBarOpened ? (
         <img
           className="cursor-pointer"
-          src="src/assets/icons/back.svg"
+          src={BackArrow}
           alt="go back"
           onClick={locationId ? goToLocationList : close}
         />

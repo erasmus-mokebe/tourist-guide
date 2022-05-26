@@ -1,10 +1,11 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LocationDetails } from "./features/location-details/LocationDetails";
+import { LocationList } from "./features/location-list/LocationList";
+import PathList from "./features/paths/PathList";
+import { SideBar } from "./features/sidebar/Sidebar";
 import { Browser } from "./pages/Browser";
 import { Paths } from "./pages/Paths";
-import { LocationList } from "./features/location-list/LocationList";
-import { LocationDetails } from "./features/location-details/LocationDetails";
-import { SideBar } from "./features/sidebar/Sidebar";
 import { Profile } from "./pages/Profile";
 
 function App() {
@@ -33,6 +34,16 @@ function App() {
             }
           />
           <Route path="paths" element={<Paths />} />
+          <Route
+            path="paths/:pathId"
+            element={
+              <Browser>
+                <SideBar>
+                  <PathList />
+                </SideBar>
+              </Browser>
+            }
+          />
           <Route path="profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>

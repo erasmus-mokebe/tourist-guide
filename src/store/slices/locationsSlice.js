@@ -47,9 +47,24 @@ export const locationsSlice = createSlice({
         return location;
       });
     },
+    setVisited: (state, action) => {
+      const location = state.locations.find(
+        (location) => location.id == action.payload.id
+      );
+      if (!location) {
+        return;
+      }
+      location.visited = action.payload.visited;
+    },
   },
 });
 
-export const { setLocations, filterType, clearTypeFilter, search, addComment } =
-  locationsSlice.actions;
+export const {
+  setLocations,
+  filterType,
+  clearTypeFilter,
+  search,
+  addComment,
+  setVisited,
+} = locationsSlice.actions;
 export default locationsSlice.reducer;
