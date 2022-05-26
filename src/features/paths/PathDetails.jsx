@@ -11,14 +11,14 @@ const PathDetails = ({ location, onToggle }) => {
         <div className="flex">
           <img src={fullStar} />
           <span className="font-bold text-base ml-2">
-            {location?.rating?.score}
+            {location.ratingScore}
           </span>
         </div>
       </div>
       <p className="text-gray-500 mb-4 font-medium text-sm">
-        {location?.type}
+        {location.type}
         <span className="mx-2">·</span>
-        {location?.place.street}
+        {location.place.street}
       </p>
       {location.visited ? (
         <button

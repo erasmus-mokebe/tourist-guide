@@ -40,7 +40,7 @@ export const locationsSlice = createSlice({
           return {
             ...location,
             ratings,
-            ratingScore,
+            ratingScore: ratingScore.toFixed(2),
           };
         }
 
