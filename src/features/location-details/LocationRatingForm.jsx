@@ -11,12 +11,6 @@ export const LocationRatingForm = () => {
   const sendRating = (e) => {
     e.preventDefault();
 
-    console.log({
-      rating,
-      content,
-      author: { nickname: "Adolf Hitler", picture: "" },
-    });
-
     fetch(`http://localhost:8080/locations/${locationId}/ratings`, {
       method: "POST",
       mode: "no-cors",
@@ -57,7 +51,6 @@ export const LocationRatingForm = () => {
         >
           Send opinion
         </button>
-        {/* <input type="hidden" name="rating" value={rating} /> */}
       </form>
     </div>
   );

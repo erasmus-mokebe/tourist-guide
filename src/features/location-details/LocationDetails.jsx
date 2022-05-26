@@ -4,8 +4,8 @@ import { useEffect } from "react";
 
 import { LocationRatingList } from "./LocationRatingList";
 import { LocationRatingForm } from "./LocationRatingForm";
+import { DisplayStars } from "./DisplayStars";
 
-import RatingStarFullIcon from "../../assets/icons/star_full.svg";
 import EarthIcon from "../../assets/icons/earth.svg";
 import PhoneIcon from "../../assets/icons/phone.svg";
 import HomeIcon from "../../assets/icons/home.svg";
@@ -27,16 +27,16 @@ export const LocationDetails = () => {
       <div>
         <img src={PlaceIcon} alt={"alt"} className="w-full mb-6" />
         <div className="px-6">
-          <div className="flex justify-between">
-            <h3 className="tesxt-lg font-semibold">{location.name}</h3>
+          <div className="w-full">
             <div className="flex font-semibold">
-              <img src={RatingStarFullIcon} alt="rating star" />
+              <DisplayStars rating={Math.round(location.ratingScore)} />
               <span className="pl-3 pr-1">{location.ratingScore}</span>
               <span className="text-neutral-600 w-20">
                 ({location.ratings.length}
                 {location.ratings.length == 1 ? " rating)" : " ratings)"}
               </span>
             </div>
+            <h3 className="tesxt-lg font-semibold">{location.name}</h3>
           </div>
           <p className="text-neutral-600 my-8">{location.description}</p>
           <div>

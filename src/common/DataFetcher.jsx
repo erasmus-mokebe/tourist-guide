@@ -9,9 +9,10 @@ export const DataFetcher = ({ children }) => {
 
   const calcRating = (e) => ({
     ...e,
-    ratingScore:
-      e.ratings.reduce((prev, curr) => prev + curr.rating, 0) /
-      e.ratings.length,
+    ratingScore: e.ratings.length
+      ? e.ratings.reduce((prev, curr) => prev + curr.rating, 0) /
+        e.ratings.length
+      : 0,
   });
 
   useEffect(() => {
@@ -21,5 +22,5 @@ export const DataFetcher = ({ children }) => {
       .catch((e) => console.error(e));
   }, []);
 
-  return children;
+  return <>{children}</>;
 };
