@@ -1,42 +1,37 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterType, clearTypeFilter } from "../../store/slices/locationsSlice";
+import { getIconImage, getIconColor } from "../map/util";
 
-import UmbrellaIcon from "../../assets/icons/umbrella.svg";
-import WeedIcon from "../../assets/icons/weed.svg";
-import TreeIcon from "../../assets/icons/tree.svg";
-import CutleryIcon from "../../assets/icons/cutlery.svg";
-import ParkingIcon from "../../assets/icons/parking.svg";
-
-const LocationType = (props) => {
+const LocationType = ({ type, alt }) => {
   const currentTypeFilter = useSelector(
     (state) => state.locations.filters.type
   );
 
   const dispatch = useDispatch();
 
-  console.log(props.img);
+  const img = getIconImage(type);
+  const color = getIconColor(type);
 
   return (
     <div
       className="flex justify-center items-center gap-2 lg:w-8 h-8 border-box py-1 px-4 lg:p-1 rounded-full cursor-pointer"
       style={{
-        backgroundColor:
-          currentTypeFilter === props.type ? "white" : props.color,
-        border: `2px solid ${props.color}`,
+        backgroundColor: currentTypeFilter === type ? "white" : color,
+        border: `2px solid ${color}`,
       }}
       onClick={() => {
-        if (currentTypeFilter === props.type) {
+        if (currentTypeFilter === type) {
           dispatch(clearTypeFilter());
         } else {
-          dispatch(filterType(props.type));
+          dispatch(filterType(type));
         }
       }}
     >
       <div
         className="inline-block min-h-full h-full aspect-square"
         style={{
-          maskImage: `url("${props.img}")`,
-          WebkitMaskImage: `url("${props.img}")`,
+          maskImage: `url("${img}")`,
+          WebkitMaskImage: `url("${img}")`,
           maskSize: "contain",
           WebkitMaskSize: "contain",
           maskPosition: "center",
@@ -48,18 +43,17 @@ const LocationType = (props) => {
         <div
           className="w-full h-full"
           style={{
-            backgroundColor:
-              currentTypeFilter === props.type ? props.color : "white",
+            backgroundColor: currentTypeFilter === type ? color : "white",
           }}
         />
       </div>
       <span
         className="lg:hidden whitespace-nowrap"
         style={{
-          color: currentTypeFilter === props.type ? props.color : "white",
+          color: currentTypeFilter === type ? color : "white",
         }}
       >
-        {props.alt}
+        {alt}
       </span>
     </div>
   );
@@ -74,26 +68,11 @@ export const LocationTypes = (props) => {
         props.className ? props.className : ""
       } px-8 lg:p-0 h-full min-h-[3rem] lg:flex gap-3 items-center overflow-x-scroll lg:overflow-x-auto`}
     >
-      <LocationType
-        color="#ED8B16"
-        img={UmbrellaIcon}
-        alt="rest in piss"
-        type="beach"
-      />
-      <LocationType color="#C2BB00" img={WeedIcon} alt="SPA" type="spa" />
-      <LocationType color="#E1523D" img={TreeIcon} alt="greenery" type="park" />
-      <LocationType
-        color="#005E54"
-        img={CutleryIcon}
-        alt="Restaurants"
-        type="restaurant"
-      />
-      <LocationType
-        color="#003547"
-        img={ParkingIcon}
-        alt="Parking"
-        type="parking"
-      />
+      <LocationType alt="rest in piss" type="beach" />
+      <LocationType alt="Museums" type="museum" />
+      <LocationType alt="greenery" type="park" />
+      <LocationType alt="Restaurants" type="restaurant" />
+      <LocationType alt="Parking" type="parking" />
     </div>
   );
 };

@@ -13,7 +13,8 @@ export const StarsInput = ({ rating, onChange }) => {
           alt={i <= rating ? "Full Star" : "Empty Star"}
           onClick={() => onChange(i)}
           className="cursor-pointer"
-        ></img>
+          key={i}
+        />
       );
     }
 
