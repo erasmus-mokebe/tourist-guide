@@ -15,10 +15,11 @@ const PathDetails = ({ location, onToggle }) => {
           </span>
         </div>
       </div>
-      <div className="text-gray-500 mb-4 font-medium text-sm">
+      <p className="text-gray-500 mb-4 font-medium text-sm">
         {location?.type}
-        <span className="mx-2">·{location?.place.street}</span>
-      </div>
+        <span className="mx-2">·</span>
+        {location?.place.street}
+      </p>
       {location.visited ? (
         <button
           className="bg-green-100 rounded-lg w-full text-green-600 font-medium p-2"

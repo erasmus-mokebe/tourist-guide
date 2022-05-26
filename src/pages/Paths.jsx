@@ -17,7 +17,7 @@ const Paths = () => {
   }, []);
 
   return (
-    <main className="grid grid-cols-3 gap-12 mx-12 mt-10">
+    <main className="grid grid-cols-3 gap-12 px-12 pt-10 w-full overflow-y-auto">
       {(paths || []).map((path) => (
         <PathCard path={path} key={path.id} />
       ))}
