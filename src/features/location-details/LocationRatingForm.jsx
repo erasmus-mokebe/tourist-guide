@@ -27,7 +27,7 @@ export const LocationRatingForm = () => {
         rating,
         content,
         author: {
-          nickname: "Adolf Hitler",
+          nickname: "reltiH flodA",
           picture:
             "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d2/d2f9c2f26c27684a80db6e5505811df1cb2c8471_full.jpg",
         },
