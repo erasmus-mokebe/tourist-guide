@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -6,6 +7,7 @@ import { addComment } from "../../store/slices/locationsSlice";
 import { StarsInput } from "./StarsInput";
 
 export const LocationRatingForm = () => {
+  const { isAuthenticated, loginWithRedirect, user } = useAuth0();
   const dispatch = useDispatch();
   const [rating, setRating] = useState(0);
   const [content, setContent] = useState("");
@@ -18,9 +20,8 @@ export const LocationRatingForm = () => {
       rating,
       content,
       author: {
-        nickname: "reltiH flodA",
-        picture:
-          "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d2/d2f9c2f26c27684a80db6e5505811df1cb2c8471_full.jpg",
+        nickname: user.nickname,
+        picture: user.picture,
       },
     };
 
@@ -38,9 +39,8 @@ export const LocationRatingForm = () => {
     setContent("");
   };
 
-  return (
+  return isAuthenticated ? (
     <div>
-      <h3 className="text-lg font-semibold my-5">Share your experiences</h3>
       <h4 className="font-semibold">Your rating:</h4>
       <div className="flex mb-4">
         <StarsInput rating={rating} onChange={setRating} />
@@ -60,6 +60,11 @@ export const LocationRatingForm = () => {
           Send opinion
         </button>
       </form>
+    </div>
+  ) : (
+    <div>
+      <p>You need to be logged in!</p>
+      <button onClick={loginWithRedirect}>Log in</button>
     </div>
   );
 };
