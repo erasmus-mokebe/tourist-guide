@@ -69,7 +69,12 @@ export const LocationRatingForm = () => {
   ) : (
     <div>
       <p>You need to be logged in!</p>
-      <button onClick={loginWithRedirect}>Log in</button>
+      <button
+        onClick={loginWithRedirect}
+        className="bg-blue-500 py-1 px-3 text-white rounded-lg"
+      >
+        Log in
+      </button>
     </div>
   );
 };
