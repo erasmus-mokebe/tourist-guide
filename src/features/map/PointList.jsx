@@ -89,14 +89,13 @@ export const PointList = () => {
 
   return locations.map(
     ({ id, place, type }) =>
-      console.log(type) ||
-      ((locationsFilters.type === "all" || locationsFilters.type === type) && (
+      (locationsFilters.type === "all" || locationsFilters.type === type) && (
         <Marker
           key={id}
           position={place.coords}
           icon={renderMarker(GetIcon(type))}
           eventHandlers={{ click: (point) => markerClickHandler(id, point) }}
         />
-      ))
+      )
   );
 };
