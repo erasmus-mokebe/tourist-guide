@@ -9,17 +9,12 @@ import { StarsInput } from "./StarsInput";
 export const LocationRatingForm = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
   const dispatch = useDispatch();
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(5);
   const [content, setContent] = useState("");
   const { locationId } = useParams();
 
   const sendRating = (e) => {
     e.preventDefault();
-
-    if (rating === 0) {
-      alert("Invalid rating");
-      return;
-    }
 
     const payload = {
       rating,
