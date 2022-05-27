@@ -1,15 +1,10 @@
 import lagoon from "../../assets/img/paths/lagoon.jpg";
 import fullStar from "../../assets/icons/star_full.svg";
 import pin from "../../assets/icons/pin.svg";
-import { useState } from "react";
 
 const PathDetails = ({ location, onToggle }) => {
-  //  const [isClicked, setIsClicked] = useState(false);
-  // const toogle = () => {
-  //   setIsClicked((pre) => !pre);
-  // };
   return (
-    <div className="p-[8%]">
+    <div className="py-[8%]">
       <img src={lagoon} />
       <div className="flex justify-between items-center my-2">
         <h3 className="font-semibold text-xl">{location?.name}</h3>
@@ -20,10 +15,11 @@ const PathDetails = ({ location, onToggle }) => {
           </span>
         </div>
       </div>
-      <div className="text-gray-500 mb-4 font-medium text-sm">
+      <p className="text-gray-500 mb-4 font-medium text-sm">
         {location?.type}
-        <span className="mx-2">·{location?.place.street}</span>
-      </div>
+        <span className="mx-2">·</span>
+        {location?.place.street}
+      </p>
       {location.visited ? (
         <button
           className="bg-green-100 rounded-lg w-full text-green-600 font-medium p-2"

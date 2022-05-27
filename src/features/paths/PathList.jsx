@@ -3,35 +3,47 @@ import PathDetails from "./PathDetails";
 import PathButton from "./PathButton";
 import PathDescription from "./PathDescription";
 import { setVisited } from "../../store/slices/locationsSlice";
-
-const description = [
-  {
-    id: "1",
-    name: "Incredible beaches",
-    description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-];
+import { Navigate, useParams } from "react-router-dom";
+import { useMemo } from "react";
 
 const PathList = () => {
-  const locations = useSelector((state) => state.locations).locations;
   const dispatch = useDispatch();
+
+  const { paths } = useSelector((state) => state.paths);
+  const { pathId } = useParams();
+  const path = paths.find((path) => path.id === pathId);
+
+  if (!path) {
+    return <Navigate to="/paths" />;
+  }
+
+  const { locations: allLocations } = useSelector((state) => state.locations);
+  const matchedLocations = useMemo(() => {
+    return allLocations.filter((location) =>
+      path.locations.includes(location.id)
+    );
+  }, [allLocations, path.locations]);
+
   const toggleVisited = (id, visited) => {
     dispatch(setVisited({ id, visited }));
   };
-  return (
-    <>
-      <PathButton />
-      <PathDescription descriptions={description[0]} locations={locations} />
 
-      {locations.map((location) => (
+  return (
+    <div className="px-8">
+      <PathButton />
+      <PathDescription
+        name={path.name}
+        description={path.description}
+        locations={matchedLocations}
+      />
+      {matchedLocations.map((location) => (
         <PathDetails
           key={location.id}
           onToggle={() => toggleVisited(location.id, !location.visited)}
           location={location}
         />
       ))}
-    </>
+    </div>
   );
 };
 
