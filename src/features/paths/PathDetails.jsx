@@ -1,17 +1,21 @@
 import lagoon from "../../assets/img/paths/lagoon.jpg";
 import fullStar from "../../assets/icons/star_full.svg";
 import pin from "../../assets/icons/pin.svg";
+import { useDispatch } from "react-redux";
+import { setPoint } from "../../store/slices/currentPointSlice";
 
 const PathDetails = ({ location, onToggle }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="py-[8%]">
-      <img src={lagoon} />
+      <img className="w-full h-72" src={lagoon} />
       <div className="flex justify-between items-center my-2">
         <h3 className="font-semibold text-xl">{location?.name}</h3>
         <div className="flex">
           <img src={fullStar} />
           <span className="font-bold text-base ml-2">
-            {location?.rating?.score}
+            {location?.ratingScore.toFixed(2)}
           </span>
         </div>
       </div>
@@ -39,6 +43,14 @@ const PathDetails = ({ location, onToggle }) => {
             className={`bg-[#24A229] rounded-lg w-[22%] relative ${
               !location.visited ? "animate-grow" : ""
             }`}
+            onClick={() =>
+              dispatch(
+                setPoint({
+                  lat: location.place.coords[0],
+                  lng: location.place.coords[1],
+                })
+              )
+            }
           >
             <img
               src={pin}

@@ -16,6 +16,11 @@ export const LocationRatingForm = () => {
   const sendRating = (e) => {
     e.preventDefault();
 
+    if (rating === 0) {
+      alert("Invalid rating");
+      return;
+    }
+
     const payload = {
       rating,
       content,

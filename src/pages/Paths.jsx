@@ -19,7 +19,10 @@ export const Paths = () => {
   return (
     <>
       <PathsNavigation />
-      <main className="grid grid-cols-3 gap-12 px-12 pt-10 w-full overflow-y-auto">
+      <main
+        className="grid gap-12 px-12 pt-10 w-full overflow-y-auto"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))" }}
+      >
         {(paths || []).map((path) => (
           <PathCard path={path} key={path.id} />
         ))}

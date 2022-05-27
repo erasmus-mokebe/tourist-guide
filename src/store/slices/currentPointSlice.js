@@ -8,11 +8,11 @@ export const currentPointSlice = createSlice({
   name: "currentPoint",
   initialState,
   reducers: {
-    updatePoint: (state,action) => {
+    setPoint: (state, action) => {
       state.currentPoint = action.payload;
     },
   },
 });
 
-export const { updatePoint } = currentPointSlice.actions;
+export const { setPoint } = currentPointSlice.actions;
 export default currentPointSlice.reducer;

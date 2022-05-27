@@ -1,13 +1,17 @@
 import { Map } from "../features/map/Map";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { openSideBar } from "../store/slices/sideBarSlice";
+import { openSideBar, toggleSideBar } from "../store/slices/sideBarSlice";
 import { useParams } from "react-router-dom";
 import { Navigation } from "../features/navigation/Navigation";
 
 export const Browser = (props) => {
   const dispatch = useDispatch();
-  const { locationId } = useParams();
+  const { locationId, pathId } = useParams();
+
+  useEffect(() => {
+    if (pathId) dispatch(openSideBar());
+  }, []);
 
   useEffect(() => {
     console.log(props.children);

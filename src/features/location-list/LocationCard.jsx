@@ -1,13 +1,22 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import RatingStarFullIcon from "../../assets/icons/star_full.svg";
+import { setPoint } from "../../store/slices/currentPointSlice";
 
 export const LocationCard = ({ location }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (
     <div
       className="text-sm mb-8 cursor-pointer"
       onClick={() => {
+        dispatch(
+          setPoint({
+            lat: location.place.coords[0],
+            lng: location.place.coords[1],
+          })
+        );
         navigate(`/${location.id}`);
       }}
     >

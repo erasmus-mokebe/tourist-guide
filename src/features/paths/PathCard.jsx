@@ -6,7 +6,7 @@ export const PathCard = ({ path }) => {
 
   return (
     <div className="h-max">
-      <img src={path.img} className="w-full h-80" />
+      <img src={path.picture} className="w-full h-80 object-cover" />
       <div className="flex flex-col gap-4 mt-5">
         <h3 className="font-medium">{path.name}</h3>
         <p className="text-gray-500">{path.description}</p>

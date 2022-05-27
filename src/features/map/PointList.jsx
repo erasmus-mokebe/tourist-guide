@@ -6,6 +6,8 @@ import { renderToString } from "react-dom/server";
 import { getIconImage, getIconColor } from "./util";
 import MapMarker from "../../assets/icons/map-marker.svg";
 import { openSideBar } from "../../store/slices/sideBarSlice";
+import { useEffect } from "react";
+import { setPoint } from "../../store/slices/currentPointSlice";
 
 const GetIcon = (type) => {
   const icon = getIconImage(type);
@@ -64,31 +66,26 @@ const renderMarker = (markerComponent) => {
 };
 
 export const PointList = () => {
+  const currentPoint = useSelector((state) => state.currentPoint.currentPoint);
   const locations = useSelector((state) => state.locations.locations);
   const locationsFilters = useSelector((state) => state.locations.filters);
 
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   const map = useMapEvents({});
 
+  useEffect(() => {
+    if (currentPoint) map.flyTo(currentPoint, 18, { animate: true });
+  }, [currentPoint]);
+
   const markerClickHandler = (id, point) => {
+    const coords = { lat: point.latlng.lat, lng: point.latlng.lng };
+
+    dispatch(setPoint(coords));
     navigate(`/${id}`);
-
-    const cords = {
-      lat: point.latlng.lat,
-      lng: point.latlng.lng + 0.001,
-    };
-
-    map.flyTo(cords, 18, {
-      animate: true,
-    });
-
     dispatch(openSideBar());
   };
-
-  if (!locations) return <></>;
 
   return locations.map(
     ({ id, place, type }) =>
@@ -98,7 +95,7 @@ export const PointList = () => {
           key={id}
           position={place.coords}
           icon={renderMarker(GetIcon(type))}
-          eventHandlers={{ click: markerClickHandler.bind(null, id) }}
+          eventHandlers={{ click: (point) => markerClickHandler(id, point) }}
         />
       ))
   );

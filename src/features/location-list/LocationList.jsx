@@ -25,7 +25,16 @@ export const LocationList = () => {
     });
 
   return (
-    <div className="w-full p-5" style={{ direction: "ltr" }}>
+    <div
+      className="grid gap-3 lg:block w-full p-5"
+      style={{
+        direction: "ltr",
+        gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+      }}
+    >
+      {locationsSorted?.length === 0 && (
+        <p className="py-12 text-center col-span-full">Nothing was found</p>
+      )}
       {locationsSorted?.map((location) => (
         <LocationCard key={location.id} location={location}></LocationCard>
       ))}

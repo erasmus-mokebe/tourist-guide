@@ -5,6 +5,7 @@ import PathDescription from "./PathDescription";
 import { setVisited } from "../../store/slices/locationsSlice";
 import { Navigate, useParams } from "react-router-dom";
 import { useMemo } from "react";
+import { toggleSideBar } from "../../store/slices/sideBarSlice";
 
 const PathList = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const PathList = () => {
   };
 
   return (
-    <div className="px-8">
+    <div className="px-8 flex-grow">
       <PathButton />
       <PathDescription
         name={path.name}

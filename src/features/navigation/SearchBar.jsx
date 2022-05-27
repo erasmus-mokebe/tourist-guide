@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { openSideBar } from "../../store/slices/sideBarSlice";
 import { search } from "../../store/slices/locationsSlice";
 import { Logo } from "./Logo";
+import { useNavigate } from "react-router-dom";
 
 import SearchIcon from "../../assets/icons/search.svg";
 import BurgerIcon from "../../assets/icons/burger.svg";
@@ -12,6 +13,7 @@ export const SearchBar = (props) => {
   const dispatch = useDispatch();
   const sideBarOpened = useSelector((state) => state.sideBar.opened);
   const input = useRef();
+  const navigate = useNavigate();
 
   const clearInput = () => {
     input.current.value = "";
@@ -29,6 +31,7 @@ export const SearchBar = (props) => {
           dispatch(openSideBar());
         }}
         onChange={() => {
+          navigate("/");
           dispatch(search(input.current.value));
         }}
       />

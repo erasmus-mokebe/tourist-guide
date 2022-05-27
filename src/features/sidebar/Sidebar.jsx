@@ -7,7 +7,7 @@ export const SideBar = ({ children }) => {
     isOpen && (
       <section
         id="sidebar"
-        className="flex min-w-[400px] w-[400px] h-full bg-white justify-center z-40 overflow-auto"
+        className="flex flex-shrink-0 w-full lg:w-[400px] h-full bg-white justify-center z-40 overflow-auto"
       >
         {children}
       </section>

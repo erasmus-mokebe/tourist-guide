@@ -6,8 +6,8 @@ const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } =
 
 export const Map = () => {
   const bounds = [
-    [40.6555371, 22.9052355],
-    [40.5862896, 22.9904356],
+    [40.8555371, 23.2052355],
+    [40.3862896, 22.2904356],
   ];
 
   return (
