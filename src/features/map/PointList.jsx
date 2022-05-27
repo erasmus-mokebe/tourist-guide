@@ -1,6 +1,6 @@
 import { Marker, useMapEvents } from "react-leaflet";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { divIcon } from "leaflet";
 import { renderToString } from "react-dom/server";
 import { getIconImage, getIconColor } from "./util";
@@ -70,6 +70,14 @@ export const PointList = () => {
   const locations = useSelector((state) => state.locations.locations);
   const locationsFilters = useSelector((state) => state.locations.filters);
 
+  const { pathId } = useParams();
+  const paths = useSelector((state) => state.paths.paths);
+  const currentPath = paths.find((path) => path.id === pathId);
+
+  useEffect(() => {
+    console.log(currentPath);
+  }, []);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -89,7 +97,8 @@ export const PointList = () => {
 
   return locations.map(
     ({ id, place, type }) =>
-      (locationsFilters.type === "all" || locationsFilters.type === type) && (
+      (locationsFilters.type === "all" || locationsFilters.type === type) &&
+      (!currentPath || currentPath.locations.includes(id)) && (
         <Marker
           key={id}
           position={place.coords}

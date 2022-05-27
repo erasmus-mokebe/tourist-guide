@@ -9,7 +9,7 @@ const PathDetails = ({ location, onToggle }) => {
 
   return (
     <div className="py-[8%]">
-      <img className="w-full h-72" src={lagoon} />
+      <img className="w-full h-72" src={location.photoUrl} />
       <div className="flex justify-between items-center my-2">
         <h3 className="font-semibold text-xl">{location?.name}</h3>
         <div className="flex">
