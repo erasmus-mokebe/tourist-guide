@@ -9,7 +9,7 @@ export const LocationCard = ({ location }) => {
         <h3 className="text-lg">{location?.name}</h3>
         <div className="flex">
           <img src={RatingStarFullIcon} />
-          <span>{location?.rating.score}</span>
+          <span>{location?.rating}</span>
         </div>
       </div>
       <div className="text-gray-500">
