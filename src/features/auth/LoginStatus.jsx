@@ -1,7 +1,9 @@
-import { useAuth0 } from '@auth0/auth0-react';
-import { ProfileImage } from './ProfileImage';
+import { useAuth0 } from "@auth0/auth0-react";
+import { ProfileExpand } from "./ProfileExpand";
 
 export const LoginStatus = () => {
-  const { isAuthenticated, loginWithRedirect, user } = useAuth0();
-  return isAuthenticated ? <ProfileImage /> : <button onClick={loginWithRedirect}>Log in</button>;
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+
+  if (isAuthenticated) return <ProfileExpand/>;
+  return <button onClick={loginWithRedirect}>Log in</button>;
 };

@@ -6,7 +6,6 @@ import PathList from "./features/paths/PathList";
 import { SideBar } from "./features/sidebar/Sidebar";
 import { Browser } from "./pages/Browser";
 import { Paths } from "./pages/Paths";
-import { Profile } from "./pages/Profile";
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
             element={
               <Browser>
                 <SideBar>
-                  <LocationList />
+                  <LocationList/>
                 </SideBar>
               </Browser>
             }
@@ -28,23 +27,22 @@ function App() {
             element={
               <Browser>
                 <SideBar>
-                  <LocationDetails />
+                  <LocationDetails/>
                 </SideBar>
               </Browser>
             }
           />
-          <Route path="paths" element={<Paths />} />
+          <Route path="paths" element={<Paths/>}/>
           <Route
             path="paths/:pathId"
             element={
               <Browser>
                 <SideBar>
-                  <PathList />
+                  <PathList/>
                 </SideBar>
               </Browser>
             }
           />
-          <Route path="profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
